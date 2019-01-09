@@ -1,6 +1,4 @@
 
-import vista.ImpresionesTitulo;
-
 public class MainPepe {
 
 	public static void main(String[] args) {

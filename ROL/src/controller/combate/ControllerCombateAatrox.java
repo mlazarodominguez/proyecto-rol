@@ -44,29 +44,30 @@ public class ControllerCombateAatrox {
 			default:
 				break;
 			}
+			while (boss.getVida() > 0.0) {
+				switch (opcionAtaqueBoss) {
+				case 1:
+					if (opciones == 2) {
 
-			switch (opcionAtaqueBoss) {
-			case 1:
-				if (opciones == 2) {
+					} else {
+						aatrox.setVida(aatrox.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
+						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
+					}
+					break;
 
-				} else {
-					aatrox.setVida(aatrox.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
-					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
+				case 2:
+
+					boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+					ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+
+					break;
+
+				default:
+					break;
 				}
 				break;
-
-			case 2:
-
-				boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
-				ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
-
-				break;
-
-			default:
-				break;
 			}
-			break;
-		// Primero ataca enemigo.
+			// Primero ataca enemigo.
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -90,29 +91,30 @@ public class ControllerCombateAatrox {
 				break;
 			}
 			// Atacas tu
-
-			switch (opciones) {
-			// Ataque
-			case 1:
-				boss.setVida(boss.getVida() - ControllerAatrox.ataqueBasico(aatrox));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueBasico(aatrox));
-				break;
-			// Proteger
-			case 2:
-				aatrox.setVida(aatrox.getVida() - (ControllerAatrox.proteger(boss)));
-				ImpresionMensajes.mensajeProtegerPersonaje(ControllerAatrox.proteger(boss));
-				break;
-			// Ataque habilidad
-			case 3:
-				boss.setVida(boss.getVida() - ControllerAatrox.ataqueHabilidad(aatrox));
-				aatrox.setVida(aatrox.getVida() - ControllerAatrox.gastoRecursos(aatrox));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueHabilidad(aatrox));
-				ImpresionMensajes.gastoRecursosVida(ControllerAatrox.gastoRecursos(aatrox));
-				break;
-			default:
+			while (aatrox.getVida() > 0.0) {
+				switch (opciones) {
+				// Ataque
+				case 1:
+					boss.setVida(boss.getVida() - ControllerAatrox.ataqueBasico(aatrox));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueBasico(aatrox));
+					break;
+				// Proteger
+				case 2:
+					aatrox.setVida(aatrox.getVida() - (ControllerAatrox.proteger(boss)));
+					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAatrox.proteger(boss));
+					break;
+				// Ataque habilidad
+				case 3:
+					boss.setVida(boss.getVida() - ControllerAatrox.ataqueHabilidad(aatrox));
+					aatrox.setVida(aatrox.getVida() - ControllerAatrox.gastoRecursos(aatrox));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueHabilidad(aatrox));
+					ImpresionMensajes.gastoRecursosVida(ControllerAatrox.gastoRecursos(aatrox));
+					break;
+				default:
+					break;
+				}
 				break;
 			}
-			break;
 
 		default:
 			break;
@@ -150,29 +152,32 @@ public class ControllerCombateAatrox {
 			default:
 				break;
 			}
+			while (esbirro.getVida() > 0.0) {
+				switch (opcionAtaqueBoss) {
+				case 1:
+					if (opciones == 2) {
 
-			switch (opcionAtaqueBoss) {
-			case 1:
-				if (opciones == 2) {
+					} else {
+						aatrox.setVida(aatrox.getVida() - ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+					}
+					break;
 
-				} else {
-					aatrox.setVida(aatrox.getVida() - ControllerEnemigoAleatorio.ataqueBasico(esbirro));
-					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+				case 2:
+
+					esbirro.setVida(
+							esbirro.getVida() + ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
+					ImpresionMensajes
+							.mensajeSanarJefe(ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
+
+					break;
+
+				default:
+					break;
 				}
 				break;
-
-			case 2:
-
-				esbirro.setVida(esbirro.getVida() + ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
-				ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
-
-				break;
-
-			default:
-				break;
 			}
-			break;
-		// Primero ataca enemigo.
+			// Primero ataca enemigo.
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -196,27 +201,28 @@ public class ControllerCombateAatrox {
 				break;
 			}
 			// Atacas tu
+			while (aatrox.getVida() > 0.0) {
+				switch (opciones) {
+				// Ataque
+				case 1:
+					esbirro.setVida(esbirro.getVida() - ControllerAatrox.ataqueBasico(aatrox));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueBasico(aatrox));
+					break;
+				// Proteger
+				case 2:
 
-			switch (opciones) {
-			// Ataque
-			case 1:
-				esbirro.setVida(esbirro.getVida() - ControllerAatrox.ataqueBasico(aatrox));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueBasico(aatrox));
-				break;
-			// Proteger
-			case 2:
-
-				// Ataque habilidad
-			case 3:
-				esbirro.setVida(esbirro.getVida() - ControllerAatrox.ataqueHabilidad(aatrox));
-				aatrox.setVida(aatrox.getVida() - ControllerAatrox.gastoRecursos(aatrox));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueHabilidad(aatrox));
-				ImpresionMensajes.gastoRecursosVida(ControllerAatrox.gastoRecursos(aatrox));
-				break;
-			default:
+					// Ataque habilidad
+				case 3:
+					esbirro.setVida(esbirro.getVida() - ControllerAatrox.ataqueHabilidad(aatrox));
+					aatrox.setVida(aatrox.getVida() - ControllerAatrox.gastoRecursos(aatrox));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueHabilidad(aatrox));
+					ImpresionMensajes.gastoRecursosVida(ControllerAatrox.gastoRecursos(aatrox));
+					break;
+				default:
+					break;
+				}
 				break;
 			}
-			break;
 
 		default:
 			break;

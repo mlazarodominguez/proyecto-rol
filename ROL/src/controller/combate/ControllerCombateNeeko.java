@@ -44,29 +44,30 @@ public class ControllerCombateNeeko {
 			default:
 				break;
 			}
+			while (boss.getVida() > 0.0) {
+				switch (opcionAtaqueBoss) {
+				case 1:
+					if (opciones == 2) {
 
-			switch (opcionAtaqueBoss) {
-			case 1:
-				if (opciones == 2) {
+					} else {
+						neeko.setVida(neeko.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
+						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
+					}
+					break;
 
-				} else {
-					neeko.setVida(neeko.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
-					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
+				case 2:
+
+					boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+					ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+
+					break;
+
+				default:
+					break;
+
 				}
 				break;
-
-			case 2:
-
-				boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
-				ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
-
-				break;
-
-			default:
-				break;
-
 			}
-			break;
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -88,34 +89,36 @@ public class ControllerCombateNeeko {
 
 			default:
 				break;
-				
+
 			}
+			while (neeko.getVida() > 0.0) {
 
-			switch (opciones) {
-			// Ataque básico
-			case 1:
-				boss.setVida(boss.getVida() - ControllerNeeko.ataqueBasico(neeko));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueBasico(neeko));
-				break;
-			// Proteger
-			case 2:
+				switch (opciones) {
+				// Ataque básico
+				case 1:
+					boss.setVida(boss.getVida() - ControllerNeeko.ataqueBasico(neeko));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueBasico(neeko));
+					break;
+				// Proteger
+				case 2:
 
-				neeko.setVida(neeko.getVida() - (ControllerNeeko.proteger(boss)));
-				ImpresionMensajes.mensajeProtegerPersonaje(ControllerNeeko.proteger(boss));
-				break;
-			// Ataque habilidad
-			case 3:
-				boss.setVida(boss.getVida() - ControllerNeeko.ataqueHabilidad(neeko));
-				neeko.setRecursos(ControllerNeeko.gastoRecursos(neeko));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueHabilidad(neeko));
-				ImpresionMensajes.gastoRecursosMana(ControllerNeeko.gastoRecursos(neeko));
-				break;
+					neeko.setVida(neeko.getVida() - (ControllerNeeko.proteger(boss)));
+					ImpresionMensajes.mensajeProtegerPersonaje(ControllerNeeko.proteger(boss));
+					break;
+				// Ataque habilidad
+				case 3:
+					boss.setVida(boss.getVida() - ControllerNeeko.ataqueHabilidad(neeko));
+					neeko.setRecursos(ControllerNeeko.gastoRecursos(neeko));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueHabilidad(neeko));
+					ImpresionMensajes.gastoRecursosMana(ControllerNeeko.gastoRecursos(neeko));
+					break;
 
-			default:
+				default:
+					break;
+				}
+
 				break;
 			}
-
-			break;
 
 		default:
 			break;
@@ -152,29 +155,32 @@ public class ControllerCombateNeeko {
 			default:
 				break;
 			}
+			while (esbirro.getVida() > 0.0) {
+				switch (opcionAtaqueBoss) {
+				case 1:
+					if (opciones == 2) {
 
-			switch (opcionAtaqueBoss) {
-			case 1:
-				if (opciones == 2) {
+					} else {
+						neeko.setVida(neeko.getVida() - ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+					}
+					break;
 
-				} else {
-					neeko.setVida(neeko.getVida() - ControllerEnemigoAleatorio.ataqueBasico(esbirro));
-					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+				case 2:
+
+					esbirro.setVida(
+							esbirro.getVida() + ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
+					ImpresionMensajes
+							.mensajeSanarJefe(ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
+
+					break;
+
+				default:
+					break;
 				}
 				break;
-
-			case 2:
-
-				esbirro.setVida(esbirro.getVida() + ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
-				ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
-
-				break;
-
-			default:
-				break;
 			}
-			break;
-		// Primero ataca enemigo.
+			// Primero ataca enemigo.
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -198,28 +204,28 @@ public class ControllerCombateNeeko {
 				break;
 			}
 			// Atacas tu
+			while (neeko.getVida() > 0.0) {
+				switch (opciones) {
+				// Ataque
+				case 1:
+					esbirro.setVida(esbirro.getVida() - ControllerNeeko.ataqueBasico(neeko));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueBasico(neeko));
+					break;
+				// Proteger
+				case 2:
 
-			switch (opciones) {
-			// Ataque
-			case 1:
-				esbirro.setVida(esbirro.getVida() - ControllerNeeko.ataqueBasico(neeko));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueBasico(neeko));
-				break;
-			// Proteger
-			case 2:
-
-				// Ataque habilidad
-			case 3:
-				esbirro.setVida(esbirro.getVida() - ControllerNeeko.ataqueHabilidad(neeko));
-				neeko.setVida(neeko.getVida() - ControllerNeeko.gastoRecursos(neeko));
-				ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueHabilidad(neeko));
-				ImpresionMensajes.gastoRecursosVida(ControllerNeeko.gastoRecursos(neeko));
-				break;
-			default:
+					// Ataque habilidad
+				case 3:
+					esbirro.setVida(esbirro.getVida() - ControllerNeeko.ataqueHabilidad(neeko));
+					neeko.setVida(neeko.getVida() - ControllerNeeko.gastoRecursos(neeko));
+					ImpresionMensajes.mensajeAtaquePersonaje(ControllerNeeko.ataqueHabilidad(neeko));
+					ImpresionMensajes.gastoRecursosVida(ControllerNeeko.gastoRecursos(neeko));
+					break;
+				default:
+					break;
+				}
 				break;
 			}
-			break;
-
 		default:
 			break;
 		}
