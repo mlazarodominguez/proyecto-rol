@@ -44,7 +44,7 @@ public class ControllerCombateNeeko {
 			default:
 				break;
 			}
-			while (boss.getVida() > 0.0) {
+			if (boss.getVida() > 0.0) {
 				switch (opcionAtaqueBoss) {
 				case 1:
 					if (opciones == 2) {
@@ -66,8 +66,8 @@ public class ControllerCombateNeeko {
 					break;
 
 				}
-				break;
 			}
+			break;
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -91,7 +91,7 @@ public class ControllerCombateNeeko {
 				break;
 
 			}
-			while (neeko.getVida() > 0.0) {
+			if (neeko.getVida() > 0.0) {
 
 				switch (opciones) {
 				// Ataque básico
@@ -116,9 +116,8 @@ public class ControllerCombateNeeko {
 				default:
 					break;
 				}
-
-				break;
 			}
+			break;
 
 		default:
 			break;
@@ -155,7 +154,7 @@ public class ControllerCombateNeeko {
 			default:
 				break;
 			}
-			while (esbirro.getVida() > 0.0) {
+			if (esbirro.getVida() > 0.0) {
 				switch (opcionAtaqueBoss) {
 				case 1:
 					if (opciones == 2) {
@@ -178,9 +177,10 @@ public class ControllerCombateNeeko {
 				default:
 					break;
 				}
-				break;
 			}
-			// Primero ataca enemigo.
+			break;
+
+		// Primero ataca enemigo.
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -204,7 +204,7 @@ public class ControllerCombateNeeko {
 				break;
 			}
 			// Atacas tu
-			while (neeko.getVida() > 0.0) {
+			if (neeko.getVida() > 0.0) {
 				switch (opciones) {
 				// Ataque
 				case 1:
@@ -224,8 +224,9 @@ public class ControllerCombateNeeko {
 				default:
 					break;
 				}
-				break;
 			}
+			break;
+
 		default:
 			break;
 		}

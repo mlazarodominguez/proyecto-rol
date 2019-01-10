@@ -44,7 +44,7 @@ public class ControllerCombateAatrox {
 			default:
 				break;
 			}
-			while (boss.getVida() > 0.0) {
+			if (boss.getVida() > 0.0) {
 				switch (opcionAtaqueBoss) {
 				case 1:
 					if (opciones == 2) {
@@ -65,9 +65,10 @@ public class ControllerCombateAatrox {
 				default:
 					break;
 				}
-				break;
 			}
-			// Primero ataca enemigo.
+			break;
+
+		// Primero ataca enemigo.
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -91,7 +92,7 @@ public class ControllerCombateAatrox {
 				break;
 			}
 			// Atacas tu
-			while (aatrox.getVida() > 0.0) {
+			if (aatrox.getVida() > 0.0) {
 				switch (opciones) {
 				// Ataque
 				case 1:
@@ -113,8 +114,8 @@ public class ControllerCombateAatrox {
 				default:
 					break;
 				}
-				break;
 			}
+			break;
 
 		default:
 			break;
@@ -152,7 +153,7 @@ public class ControllerCombateAatrox {
 			default:
 				break;
 			}
-			while (esbirro.getVida() > 0.0) {
+			if (esbirro.getVida() > 0.0) {
 				switch (opcionAtaqueBoss) {
 				case 1:
 					if (opciones == 2) {
@@ -175,9 +176,10 @@ public class ControllerCombateAatrox {
 				default:
 					break;
 				}
-				break;
 			}
-			// Primero ataca enemigo.
+			break;
+
+		// Primero ataca enemigo.
 
 		case 2:
 			switch (opcionAtaqueBoss) {
@@ -201,7 +203,7 @@ public class ControllerCombateAatrox {
 				break;
 			}
 			// Atacas tu
-			while (aatrox.getVida() > 0.0) {
+			if (aatrox.getVida() > 0.0) {
 				switch (opciones) {
 				// Ataque
 				case 1:
@@ -221,8 +223,8 @@ public class ControllerCombateAatrox {
 				default:
 					break;
 				}
-				break;
 			}
+			break;
 
 		default:
 			break;

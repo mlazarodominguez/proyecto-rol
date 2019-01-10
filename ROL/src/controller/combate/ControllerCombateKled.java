@@ -43,7 +43,7 @@ public class ControllerCombateKled {
 				break;
 			}
 			// Segundo ataca Boss
-			while (boss.getVida() > 0.0) {
+			if (boss.getVida() > 0.0) {
 				switch (opcionesBoss) {
 				case 1:
 					// Ataque Básico Boss
@@ -63,8 +63,9 @@ public class ControllerCombateKled {
 				default:
 					break;
 				}
-				break;
 			}
+			break;
+
 		case 2:
 			// Primero ataca boss
 			switch (opcionesBoss) {
@@ -87,7 +88,7 @@ public class ControllerCombateKled {
 				break;
 			}
 			// Segungo ataco yo
-			while (kled1.getVida() > 0.0) {
+			if (kled1.getVida() > 0.0) {
 				switch (opciones) {
 				case 1:
 					// Ataque básico
@@ -109,9 +110,8 @@ public class ControllerCombateKled {
 				default:
 					break;
 				}
-
-				break;
 			}
+			break;
 
 		default:
 			break;
@@ -148,7 +148,7 @@ public class ControllerCombateKled {
 				break;
 			}
 			// Segundo ataca Boss
-			while (esbirro.getVida() > 0.0) {
+			if (esbirro.getVida() > 0.0) {
 				switch (opcionesBoss) {
 				case 1:
 					// Ataque Básico Boss
@@ -170,8 +170,8 @@ public class ControllerCombateKled {
 				default:
 					break;
 				}
-				break;
 			}
+			break;
 
 		case 2:
 			// Primero ataca boss
@@ -195,7 +195,7 @@ public class ControllerCombateKled {
 				break;
 			}
 			// Segungo ataco yo
-			while (kled1.getVida() > 0.0) {
+			if (kled1.getVida() > 0.0) {
 				switch (opciones) {
 				case 1:
 					// Ataque básico
@@ -217,9 +217,9 @@ public class ControllerCombateKled {
 				default:
 					break;
 				}
-
-				break;
 			}
+			break;
+
 		default:
 			break;
 		}
