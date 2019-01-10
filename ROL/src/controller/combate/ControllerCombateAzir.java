@@ -34,37 +34,34 @@ public class ControllerCombateAzir {
 				// Ataque de habilidad
 				boss.setVida(boss.getVida() - ControllerAzir.ataqueHabilidad(azir1));
 
-				azir1.setRecursos(azir1.getRecursos() - ControllerAzir.gastoRecursos(azir1));
+				azir1.setRecursos(ControllerAzir.gastoRecursos(azir1));
 				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueHabilidad(azir1));
-				ImpresionMensajes.gastoRecursosMana(ControllerAzir.gastoRecursos(azir1));
 				break;
 			default:
 				break;
 			}
 			// Segundo ataca Boss
+			switch (opcionesBoss) {
+			case 1:
+				// Ataque Básico Boss
+				if (opciones == 2) {
 
-			while (boss.getVida() > 0.0) {
-				switch (opcionesBoss) {
-				case 1:
-					// Ataque Básico Boss
-					if (opciones == 2) {
-
-					} else {
-						azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
-						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
-					}
-					break;
-				case 2:
-					// Sanacion del boss
-					boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
-					ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
-					break;
-
-				default:
-					break;
+				} else {
+					azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
+					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
 				}
 				break;
+			case 2:
+				// Sanacion del boss
+				boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+				ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+				break;
+
+			default:
+				break;
 			}
+			break;
+
 		case 2:
 			// Primero ataca boss
 			switch (opcionesBoss) {
@@ -87,31 +84,28 @@ public class ControllerCombateAzir {
 				break;
 			}
 			// Segungo ataco yo
-			while (azir1.getVida() > 0.0) {
-				switch (opciones) {
-				case 1:
-					// Ataque básico
-					boss.setVida(boss.getVida() - ControllerAzir.ataqueBasico(azir1));
-					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueBasico(azir1));
-					break;
-				case 2:
-					// Proteger
-					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
-					break;
-				case 3:
-					// Ataque de habilidad
-					boss.setVida(boss.getVida() - ControllerAzir.ataqueHabilidad(azir1));
+			switch (opciones) {
+			case 1:
+				// Ataque básico
+				boss.setVida(boss.getVida() - ControllerAzir.ataqueBasico(azir1));
+				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueBasico(azir1));
+				break;
+			case 2:
+				// Proteger
+				ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+				break;
+			case 3:
+				// Ataque de habilidad
+				boss.setVida(boss.getVida() - ControllerAzir.ataqueHabilidad(azir1));
 
-					azir1.setRecursos(azir1.getRecursos() - ControllerAzir.gastoRecursos(azir1));
-					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueHabilidad(azir1));
-					ImpresionMensajes.gastoRecursosMana(ControllerAzir.gastoRecursos(azir1));
-					break;
-				default:
-					break;
-				}
-
+				azir1.setRecursos(ControllerAzir.gastoRecursos(azir1));
+				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueHabilidad(azir1));
+				break;
+			default:
 				break;
 			}
+
+			break;
 
 		default:
 			break;
@@ -140,7 +134,7 @@ public class ControllerCombateAzir {
 				// Ataque de habilidad
 				esbirro.setVida(esbirro.getVida() - ControllerAzir.ataqueHabilidad(azir1));
 
-				azir1.setRecursos(azir1.getRecursos() - ControllerAzir.gastoRecursos(azir1));
+				azir1.setRecursos(azir1.getRecursos() - 100);
 				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueHabilidad(azir1));
 				ImpresionMensajes.gastoRecursosMana(ControllerAzir.gastoRecursos(azir1));
 				break;
@@ -148,30 +142,26 @@ public class ControllerCombateAzir {
 				break;
 			}
 			// Segundo ataca Boss
-			while (esbirro.getVida() > 0.0) {
-				switch (opcionesBoss) {
-				case 1:
-					// Ataque Básico Boss
-					if (opciones == 2) {
+			switch (opcionesBoss) {
+			case 1:
+				// Ataque Básico Boss
+				if (opciones == 2) {
 
-					} else {
-						azir1.setVida(azir1.getVida() - ControllerEnemigoAleatorio.ataqueBasico(esbirro));
-						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoAleatorio.ataqueBasico(esbirro));
-					}
-					break;
-				case 2:
-					// Sanacion del boss
-					esbirro.setVida(
-							esbirro.getVida() + ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
-					ImpresionMensajes
-							.mensajeSanarJefe(ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
-					break;
-
-				default:
-					break;
+				} else {
+					azir1.setVida(azir1.getVida() - ControllerEnemigoAleatorio.ataqueBasico(esbirro));
+					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoAleatorio.ataqueBasico(esbirro));
 				}
 				break;
+			case 2:
+				// Sanacion del boss
+				esbirro.setVida(esbirro.getVida() + ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
+				ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoAleatorio.sanarVida(esbirro.getVida(), esbirro));
+				break;
+
+			default:
+				break;
 			}
+			break;
 
 		case 2:
 			// Primero ataca boss
@@ -194,32 +184,30 @@ public class ControllerCombateAzir {
 			default:
 				break;
 			}
-			while (azir1.getVida() > 0.0) {
-				// Segungo ataco yo
-				switch (opciones) {
-				case 1:
-					// Ataque básico
-					esbirro.setVida(esbirro.getVida() - ControllerAzir.ataqueBasico(azir1));
-					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueBasico(azir1));
-					break;
-				case 2:
-					// Proteger
-
-					break;
-				case 3:
-					// Ataque de habilidad
-					esbirro.setVida(esbirro.getVida() - ControllerAzir.ataqueHabilidad(azir1));
-
-					azir1.setRecursos(azir1.getRecursos() - ControllerAzir.gastoRecursos(azir1));
-					ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueHabilidad(azir1));
-					ImpresionMensajes.gastoRecursosMana(ControllerAzir.gastoRecursos(azir1));
-					break;
-				default:
-					break;
-				}
+			// Segungo ataco yo
+			switch (opciones) {
+			case 1:
+				// Ataque básico
+				esbirro.setVida(esbirro.getVida() - ControllerAzir.ataqueBasico(azir1));
+				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueBasico(azir1));
+				break;
+			case 2:
+				// Proteger
 
 				break;
+			case 3:
+				// Ataque de habilidad
+				esbirro.setVida(esbirro.getVida() - ControllerAzir.ataqueHabilidad(azir1));
+
+				azir1.setRecursos(azir1.getRecursos() - ControllerAzir.gastoRecursos(azir1));
+				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueHabilidad(azir1));
+				ImpresionMensajes.gastoRecursosMana(ControllerAzir.gastoRecursos(azir1));
+				break;
+			default:
+				break;
 			}
+
+			break;
 
 		default:
 			break;

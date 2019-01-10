@@ -18,7 +18,7 @@ public class ControllerEnemigoPrincipal {
 
 	public static double sanarVida(double vida, EnemigoPrincipal boss) {
 		double sanacion = 0;
-		double sanacionBase = 25;
+		double sanacionBase = 100;
 		if (boss.getVidaMax() - vida < sanacionBase && vida < boss.getVidaMax()) {
 			sanacion = boss.getVidaMax() - vida;
 		} else if (boss.getVidaMax() - vida > sanacionBase) {

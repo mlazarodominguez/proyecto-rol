@@ -1,6 +1,8 @@
 package vista;
 
+import model.enemigos.EnemigoPrincipal;
 import model.personajes.Aatrox;
+import model.personajes.Azir;
 
 public class ImpresionMensajes {
 
@@ -54,6 +56,39 @@ public class ImpresionMensajes {
 	public static void OpcionesCombateAatrox(Aatrox aatrox) {
 		System.out.println("*Pulsa 1 para atacar con un golpe básico(Daño: " + aatrox.getAtaque() + ")");
 		System.out.println("*Pulsa 2 para protgerte del ataque rival");
-		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: "+ aatrox.getPoderHabilidad()+ " sólo puede usarse una vez por combate)");
+		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: "+ aatrox.getPoderHabilidad());
 	}
+
+	public static void OpcionesCombateAzir(Azir azir, EnemigoPrincipal boss) {
+		System.out.println("Azir ♥ "+ azir.getVida() + "\t Recursos ✧   "+ azir.getRecursos() + "\t\t Boss ♥ " + boss.getVida());
+		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
+		System.out.println("*Pulsa 2 para protgerte del ataque rival");
+		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: "+ azir.getPoderHabilidad()+")\n");
+	}
+
+	public static void DescripcionAzir() {
+		System.out.println("\nAzir, emperador de Shurima en un pasado remoto, fue traicionado y asesinado en la hora de su mayor triunfo \npero ahora, milenios después, ha renacido como un ser Ascendido de inmenso poder.\n"
+				+ "Azir es un mago muy poderoso con un gran conocimiento en hechizos.\n");
+	}
+	public static void DescripcionKled() {
+		System.out.println("\nKled es un héroe popular entre las gentes de Valoran. Muchos soldados afirman \nque ha luchado en todos las guerras y en todas ha salido como vencedor.\n"
+				+ "Kled tiene un rol de luchador y es el mejor en el ataque cuerpo a cuerpo\n");
+	}
+
+	public static void HistoriaAzir() {
+		System.out.println("\nAzir caminaba sobre los dorados adoquines del Camino del Emperador. Las inmensas estatuas de los primeros señores de Shurima —sus antepasados— lo contemplaban."
+				+"\nEl firmamento nocturno no era como Azir lo recordaba. Las estrellas y las constelaciones no estaban en su sitio. Habían pasado milenios. Ahora Shruima sólo era una ciudad de fantasmas.\n\n");
+	}
+	
+	public static void HistoriaAzir2() {
+		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador, una oleada de energia lo golpeo empujándolo, era Ornn un semidiós de Freljord,\n"
+				+"el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos...\n"+
+				"\n*Pulsa 1 para luchar contra Ornn y vengar a los tuyos\n"
+				+"*Pulsa 2 para rendirte");
+	}
+	public static void ImprimirTurnos(int turnos) {
+		System.out.println("\n************* Turno " + turnos +" *************");
+	}
+	
+
 }
