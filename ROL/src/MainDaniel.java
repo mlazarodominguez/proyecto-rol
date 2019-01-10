@@ -89,7 +89,7 @@ public class MainDaniel {
 				do {
 					turno++;
 					ImpresionMensajes.ImprimirTurnos(turno);
-					ImpresionMensajes.OpcionesCombateAatrox(aatrox);
+					ImpresionMensajes.OpcionesCombateAatrox(aatrox, boss);
 					opciones = Leer.datoInt();
 					ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
 					System.out.println("Vida Aatrox: " + aatrox.getVida());

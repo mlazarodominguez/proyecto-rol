@@ -54,7 +54,7 @@ public class MainMiguel {
 			case 2:// Azir
 				ImpresionesTitulo.TituloAzir();
 				ImpresionesPersonajes.imprimirAzir();
-				MensajeHistoriaAzir.DescripcionAzir();
+				MensajeHistoriaAzir.descripcionAzir();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
 				break;
