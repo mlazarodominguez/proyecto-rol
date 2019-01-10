@@ -1,6 +1,8 @@
 package vista;
 
+import datos.DatosLoot;
 import model.enemigos.EnemigoPrincipal;
+import model.loot.LootPoderHabilidad;
 import model.personajes.Aatrox;
 import model.personajes.Azir;
 
@@ -66,25 +68,9 @@ public class ImpresionMensajes {
 		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: "+ azir.getPoderHabilidad()+")\n");
 	}
 
-	public static void DescripcionAzir() {
-		System.out.println("\nAzir, emperador de Shurima en un pasado remoto, fue traicionado y asesinado en la hora de su mayor triunfo \npero ahora, milenios después, ha renacido como un ser Ascendido de inmenso poder.\n"
-				+ "Azir es un mago muy poderoso con un gran conocimiento en hechizos.\n");
-	}
 	public static void DescripcionKled() {
 		System.out.println("\nKled es un héroe popular entre las gentes de Valoran. Muchos soldados afirman \nque ha luchado en todos las guerras y en todas ha salido como vencedor.\n"
 				+ "Kled tiene un rol de luchador y es el mejor en el ataque cuerpo a cuerpo\n");
-	}
-
-	public static void HistoriaAzir() {
-		System.out.println("\nAzir caminaba sobre los dorados adoquines del Camino del Emperador. Las inmensas estatuas de los primeros señores de Shurima —sus antepasados— lo contemplaban."
-				+"\nEl firmamento nocturno no era como Azir lo recordaba. Las estrellas y las constelaciones no estaban en su sitio. Habían pasado milenios. Ahora Shruima sólo era una ciudad de fantasmas.\n\n");
-	}
-	
-	public static void HistoriaAzir2() {
-		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador, una oleada de energia lo golpeo empujándolo, era Ornn un semidiós de Freljord,\n"
-				+"el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos...\n"+
-				"\n*Pulsa 1 para luchar contra Ornn y vengar a los tuyos\n"
-				+"*Pulsa 2 para rendirte");
 	}
 	
 	public static void HistoriaKled() {
@@ -108,5 +94,35 @@ public class ImpresionMensajes {
 		System.out.println("\n************* Turno " + turnos +" *************");
 	}
 	
+	public static void ErrorOpciones() {
+		System.out.println("Esa opción no está disponible.Elija otra:");
+	}
+	public static void ErrorRecursos() {
+		System.out.println("No tiene mas recursos disponibles.Elije otra opción:");
+	}
+	public static void ImprimirLootHabilidad(LootPoderHabilidad lph, DatosLoot dl) {
+		if (lph.getNombre().equals(dl.getListaLootPoderHabilidad()[0].getNombre())) {
+			ImpresionLoot1.imprimirliandry();
+			System.out.println("\nObjeto común : " + lph.getNombre());
+			System.out.println("Poder de habilidad : " + lph.getPoderHabilidad() + " ↑" + "\n" + "Rescursos : " + lph.getRecursos() + " ↑");
+		}
+		if (lph.getNombre().equals(dl.getListaLootPoderHabilidad()[1].getNombre())) {
+			ImpresionLoot1.imprimirTenaza();
+			System.out.println("\nObjeto Épico : " + lph.getNombre());
+			System.out.println("Poder de habilidad : " + lph.getPoderHabilidad() + " ↑" + "\n" + "Rescursos : " + lph.getRecursos() + " ↑");
+		}
+		if (lph.getNombre().equals(dl.getListaLootPoderHabilidad()[2].getNombre())) {
+			ImpresionLoot1.imprimirRabadon();
+			System.out.println("\nLEGENDARIOO !!! : " + lph.getNombre());
+			System.out.println("Poder de habilidad : " + lph.getPoderHabilidad() + " ↑" + "\n" + "Rescursos : " + lph.getRecursos() + " ↑");
+		}
+	}
+	public static void AceptarLoot() {
+		System.out.println("Le has pateado el culo a ese jefe. Pulsa cualquier número para reclamar tu recompensa.");
+	}
+	public static void nuevasEstadisticasAzir(Azir azir) {
+		System.out.println("Nuevos Recursos : " + azir.getRecursos());
+		System.out.println("Nuevo poder de habilidad : " + azir.getPoderHabilidad());
+	}
 
 }

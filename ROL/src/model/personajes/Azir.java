@@ -8,13 +8,14 @@ public class Azir {
 	private int poderHabilidad;
 	private String nombre;
 	private int recursos;
+	private int recursosMax;
 	private double vidaMaxima;
 
 	public Azir() {
 
 	}
 
-	public Azir(double vida, int defensa, int ataque, int poderHabilidad, String nombre, int recursos,double vidaMaxima) {
+	public Azir(double vida, int defensa, int ataque, int poderHabilidad, String nombre, int recursos,int resursosMax,double vidaMaxima) {
 		super();
 		this.vida = vida;
 		this.defensa = defensa;
@@ -22,7 +23,16 @@ public class Azir {
 		this.poderHabilidad = poderHabilidad;
 		this.nombre = nombre;
 		this.recursos = recursos;
+		this.recursosMax = resursosMax;
 		this.vidaMaxima= vidaMaxima;
+	}
+
+	public int getRecursosMax() {
+		return recursosMax;
+	}
+
+	public void setRecursosMax(int recursosMax) {
+		this.recursosMax = recursosMax;
 	}
 
 	public double getVida() {

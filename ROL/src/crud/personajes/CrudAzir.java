@@ -9,8 +9,12 @@ public class CrudAzir {
 	public static void incrementarAtaque(int aumento) {
 		a.setAtaque(a.getAtaque() + aumento);
 	}
+	
+	public static void resetearVida(Azir az) {
+		az.setVida(az.getVidaMaxima());
+	}
 
-	public static void incrementarVida(int aumento) {
+	public static void incrementarVidaMax(int aumento) {
 
 		a.setVida(a.getVida() + aumento);
 	}
@@ -23,7 +27,7 @@ public class CrudAzir {
 		a.setPoderHabilidad(a.getPoderHabilidad() + aumento);
 	}
 
-	public static void incrementarRecursos(int aumento) {
-		a.setRecursos(a.getRecursos() + aumento);
+	public static void incrementarRecursosMax(Azir az,int aumento) {
+		az.setRecursosMax(az.getRecursosMax() + aumento);
 	}
 }

@@ -8,7 +8,7 @@ public class MensajesPrueba {
 	public static void MostrarResultadoAzir(Azir azir, EnemigoPrincipal boss) {
 		if (boss.getVida()<=0 && azir.getVida()>0) {
 			System.out.println("\nBoss ♥ " + boss.getVida() + "\t\t Azir ♥ "+ azir.getVida());
-			System.out.println("Has ganado");
+			ImpresionesTitulo.TituloGanador();
 		}
 		if(boss.getVida()>0 && azir.getVida()<=0) {
 			System.out.println("\nBoss ♥ " + boss.getVida() + "\t\t Azir ♥ "+ azir.getVida());
