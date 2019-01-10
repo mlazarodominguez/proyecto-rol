@@ -35,7 +35,7 @@ public class ControllerCombateKled {
 				// Ataque de habilidad
 				boss.setVida(boss.getVida() - ControllerKled.ataqueHabilidad(kled1));
 				// TODO restriccion para que solo pueda usar el ataque de habilidad una vez
-				kled1.setRecursos(kled1.getRecursos() - ControllerKled.gastoRecursos(kled1));
+				kled1.setRecursos(ControllerKled.gastoRecursos(kled1));
 				ImpresionMensajes.mensajeAtaquePersonaje(ControllerKled.ataqueHabilidad(kled1));
 				ImpresionMensajes.gastoRecursosMana(ControllerKled.gastoRecursos(kled1));
 				break;
@@ -103,7 +103,7 @@ public class ControllerCombateKled {
 					// Ataque de habilidad
 					boss.setVida(boss.getVida() - ControllerKled.ataqueHabilidad(kled1));
 					// TODO restriccion para que solo pueda usar el ataque de habilidad una vez
-					kled1.setRecursos(kled1.getRecursos() - ControllerKled.gastoRecursos(kled1));
+					kled1.setRecursos(ControllerKled.gastoRecursos(kled1));
 					ImpresionMensajes.mensajeAtaquePersonaje(ControllerKled.ataqueHabilidad(kled1));
 					ImpresionMensajes.gastoRecursosMana(ControllerKled.gastoRecursos(kled1));
 					break;
@@ -140,7 +140,7 @@ public class ControllerCombateKled {
 				// Ataque de habilidad
 				esbirro.setVida(esbirro.getVida() - ControllerKled.ataqueHabilidad(kled1));
 				// TODO restriccion para que solo pueda usar el ataque de habilidad una vez
-				kled1.setRecursos(kled1.getRecursos() - ControllerKled.gastoRecursos(kled1));
+				kled1.setRecursos(ControllerKled.gastoRecursos(kled1));
 				ImpresionMensajes.mensajeAtaquePersonaje(ControllerKled.ataqueHabilidad(kled1));
 				ImpresionMensajes.gastoRecursosMana(ControllerKled.gastoRecursos(kled1));
 				break;
@@ -210,7 +210,7 @@ public class ControllerCombateKled {
 					// Ataque de habilidad
 					esbirro.setVida(esbirro.getVida() - ControllerKled.ataqueHabilidad(kled1));
 					// TODO restriccion para que solo pueda usar el ataque de habilidad una vez
-					kled1.setRecursos(kled1.getRecursos() - ControllerKled.gastoRecursos(kled1));
+					kled1.setRecursos(ControllerKled.gastoRecursos(kled1));
 					ImpresionMensajes.mensajeAtaquePersonaje(ControllerKled.ataqueHabilidad(kled1));
 					ImpresionMensajes.gastoRecursosMana(ControllerKled.gastoRecursos(kled1));
 					break;
