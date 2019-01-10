@@ -86,6 +86,24 @@ public class ImpresionMensajes {
 				"\n*Pulsa 1 para luchar contra Ornn y vengar a los tuyos\n"
 				+"*Pulsa 2 para rendirte");
 	}
+	
+	public static void HistoriaKled() {
+		System.out.println("\nUn día, de la nada, apareció Kled en lo alto de la cima, contemplando el campo de batalla. Iba a lomo de Skaarl, un dragarto inmortal del desierto."
+				+ "\nEl jinete solitario se puso de pie sobre la silla de su montura. ");
+		
+	}
+	
+	//TODO: pasar el mapa de Valoran si fuese posible para dar una idea al jugador
+	
+	public static void HistoriaKled2() {
+		System.out.println("\nCuando Kled puso la vista en el campo de batalla vio algo que no le gustaría ver a nadie."
+				+ "\nNo tenía muchas opciones puesto que apenas tenía recursos."
+				+ "\nSe encontró con con una feroz criatura. Cuando se posó ante él se convirtió en humana. ¡Era Shyvana!"
+				+ "¿Qué podría hacer Kled, si no tenía recursos?"
+				+ "\n*Pulsa 1 para luchar y abrirte paso para continuar tu viaje\n"
+				+ "*Pulsa 2 para dar la vuelta y escapar de Shyvana");
+	}
+	
 	public static void ImprimirTurnos(int turnos) {
 		System.out.println("\n************* Turno " + turnos +" *************");
 	}
