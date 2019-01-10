@@ -54,7 +54,7 @@ public class MainDaniel {
 			case 2:// Azir
 				ImpresionesTitulo.TituloAzir();
 				ImpresionesPersonajes.imprimirAzir();
-				MensajeHistoriaAzir.DescripcionAzir();
+				MensajeHistoriaAzir.descripcionAzir();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
 				break;
@@ -103,9 +103,9 @@ public class MainDaniel {
 			azir = dp.getAzir();
 			boss = de.getListaEnemigosPpal()[0]; // Ornn
 			// Historia
-			MensajeHistoriaAzir.HistoriaAzir();
+			MensajeHistoriaAzir.historiaAzir();
 			ImpresionMapas.imprimirShurima();
-			MensajeHistoriaAzir.HistoriaAzir2();
+			MensajeHistoriaAzir.historiaAzir2();
 			ImpresionesEscenarios.ImprimirCastillo2();
 			opciones = Leer.datoInt();
 			
@@ -114,10 +114,11 @@ public class MainDaniel {
 
 			ImpresionesTitulo.TituloOrnn();
 			ImpresionesEnemigos.imprimirOrnn();
-			MensajeHistoriaAzir.HistoriaAzir3();
+			MensajeHistoriaAzir.historiaAzir3();
 			opciones = Leer.datoInt();
-			ImpresionCombate1.imprimirAziryOrnn();
+			
 			do {
+				ImpresionCombate1.imprimirAziryOrnn();
 				turno++;
 				ImpresionMensajes.ImprimirTurnos(turno);
 				ImpresionMensajes.OpcionesCombateAzir(azir, boss);
@@ -145,7 +146,22 @@ public class MainDaniel {
 				azir.setRecursos(azir.getRecursosMax() + lph.getRecursos());
 				azir.setPoderHabilidad(azir.getPoderHabilidad() + lph.getPoderHabilidad());
 				ImpresionMensajes.nuevasEstadisticasAzir(azir);
-
+				ImpresionMensajes.saltarPantalla();
+				opciones = Leer.datoInt();
+				
+				MensajeHistoriaAzir.historiaAzir4();
+				ImpresionesTitulo.Titulo1();
+				ImpresionMapas.imprimirmapaGeneral();
+				ImpresionMensajes.saltarPantalla();
+				opciones = Leer.datoInt();
+				
+				MensajeHistoriaAzir.historiaAzir5();
+				ImpresionesEscenarios.ImprimirBarco();
+				MensajeHistoriaAzir.historiaAzir6();
+				
+			}
+			else {
+				System.out.println("Has perdido");
 			}
 
 		default:
