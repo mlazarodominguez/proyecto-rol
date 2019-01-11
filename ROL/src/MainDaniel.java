@@ -108,16 +108,13 @@ public class MainDaniel {
 			MensajeHistoriaAzir.historiaAzir2();
 			ImpresionesEscenarios.ImprimirCastillo2();
 			opciones = Leer.datoInt();
-			
-
-			// Combate
 
 			ImpresionesTitulo.TituloOrnn();
 			ImpresionesEnemigos.imprimirOrnn();
 			MensajeHistoriaAzir.historiaAzir3();
 			opciones = Leer.datoInt();
 			
-			do {
+			do { // Primer Combate
 				ImpresionCombate1.imprimirAziryOrnn();
 				turno++;
 				ImpresionMensajes.ImprimirTurnos(turno);
@@ -164,11 +161,33 @@ public class MainDaniel {
 				opciones = Leer.datoInt();
 				
 				MensajeHistoriaAzir.historiaAzir7(lph);
-				opciones = Leer.datoInt();
+				opciones = Leer.datoInt(); //Elegir entre pelear o dar tu loot y perder
 				
 				if (opciones == 1) {
+					boss = de.getListaEnemigosPpal()[1];
+					turno = 0;
 					MensajeHistoriaAzir.historiaAzir8();
-					ImpresionCombate1.imprimirAziryShyvana();
+					do { //Segundo Combate
+						ImpresionCombate1.imprimirAziryShyvana();
+						turno++;
+						ImpresionMensajes.ImprimirTurnos(turno);
+						ImpresionMensajes.OpcionesCombateAzir(azir, boss);
+						opciones = Leer.datoInt();
+						while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no este entre
+																				// 1 y 3
+							ImpresionMensajes.ErrorOpciones();
+							opciones = Leer.datoInt();
+						}
+						while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
+																							// habilidad si no tiene recursos
+							ImpresionMensajes.ErrorRecursos();
+							opciones = Leer.datoInt();
+						}
+						ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
+						MensajesPrueba.MostrarResultadoAzir(azir, boss);
+						
+					} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
+					
 					
 					
 				}else {

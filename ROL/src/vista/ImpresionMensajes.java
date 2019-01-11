@@ -86,7 +86,7 @@ public class ImpresionMensajes {
 
 	public static void OpcionesCombateAzir(Azir azir, EnemigoPrincipal boss) {
 		System.out.println(
-				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t Boss ♥ " + boss.getVida());
+				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"+ boss.getNombre() +" ♥ " + boss.getVida());
 		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
 		System.out.println("*Pulsa 2 para protgerte del ataque rival");
 		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad() + ")\n");
