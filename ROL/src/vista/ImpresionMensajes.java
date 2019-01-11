@@ -175,5 +175,9 @@ public class ImpresionMensajes {
 		System.out.println("Nuevos Recursos : " + azir.getRecursos());
 		System.out.println("Nuevo poder de habilidad : " + azir.getPoderHabilidad());
 	}
+	public static void traicionShyvana() {
+		System.out.println("\nShyvana te ha traicionado. Has sido destruido\n");
+		ImpresionesTitulo.TituloFinal();
+	}
 
 }

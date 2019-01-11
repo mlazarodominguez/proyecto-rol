@@ -1,5 +1,7 @@
 package vista;
 
+import model.loot.LootPoderHabilidad;
+
 public class MensajeHistoriaAzir {
 	
 	public static void descripcionAzir() {
@@ -30,7 +32,20 @@ public class MensajeHistoriaAzir {
 		System.out.println("\nUn Azir nuevo empezó su camino con un pequeño barco que estaba abandonado en Shurima con destino a Valoran.\n");
 	}
 	public static void historiaAzir6() {
-		System.out.println("\nUnos días más tarde Azir seguía con su camino a poco tiempo de llegar a su destino pero con lo que el no contaba es que le apareciera Shyvana diosa de la naturaleza");
+		System.out.println("\n\nUnos días más tarde Azir seguía con su camino a poco tiempo de llegar a su destino pero con lo que el no contaba es que le apareciera Shyvana diosa de la naturaleza.\n\n");
 	}
+	public static void historiaAzir7(LootPoderHabilidad lph) {
+		System.out.println("\nShyvana : 'Has vuelto... Ornn nunca te dejaría salir de Shurima'");
+		System.out.println("Azir : 'Ese estúpido mono no volverá a molestarme'");
+		System.out.println("Shyvana : 'Así que has acabado con él. No te dejaré llegar a tu destino a no ser que me ofrezcas lo que es mío, la " + lph.getNombre() + "'");
+		System.out.println("*Pulsa 1 para enfrentarte a Shyvana");
+		System.out.println("*Pulsa 2 para entregale la "+ lph.getNombre() + " y confiar en Shyvana");
+		
+	}
+	public static void historiaAzir8() {
+		System.out.println("\nAzir : 'Aparta de mi camino...'");
+		System.out.println("Shyvana : 'Acabas de poner hora a tu muerte'\n\n");
+	}
+	
 
 }

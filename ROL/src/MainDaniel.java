@@ -141,7 +141,7 @@ public class MainDaniel {
 				ImpresionMensajes.AceptarLoot();
 				opciones = Leer.datoInt();
 
-				lph = ControllerLoot.LootHabilidad();
+				lph = ControllerLoot.LootHabilidad(); //Asigno un loot de habilidad aleatorio
 				ImpresionMensajes.ImprimirLootHabilidad(lph, dl);
 				azir.setRecursos(azir.getRecursosMax() + lph.getRecursos());
 				azir.setPoderHabilidad(azir.getPoderHabilidad() + lph.getPoderHabilidad());
@@ -158,6 +158,22 @@ public class MainDaniel {
 				MensajeHistoriaAzir.historiaAzir5();
 				ImpresionesEscenarios.ImprimirBarco();
 				MensajeHistoriaAzir.historiaAzir6();
+				ImpresionesTitulo.TituloShyvana();
+				ImpresionesEnemigos.imprimirShyvana();
+				ImpresionMensajes.saltarPantalla();
+				opciones = Leer.datoInt();
+				
+				MensajeHistoriaAzir.historiaAzir7(lph);
+				opciones = Leer.datoInt();
+				
+				if (opciones == 1) {
+					MensajeHistoriaAzir.historiaAzir8();
+					ImpresionCombate1.imprimirAziryShyvana();
+					
+					
+				}else {
+					ImpresionMensajes.traicionShyvana();
+				}
 				
 			}
 			else {
