@@ -33,8 +33,8 @@ public class MensajeHitoriaKled {
 	//TODO: poner una imagen de skaarl
 	
 	public static void HistoriaKled4() {
-		System.out.println("\nEmpezó a buscarlo pero tenía que seguir cuanto antes su camino porque algo bueno le esperaba en Shuryma."
-				+ "\nContinuó hacia su destino y cuando llegó se encontro con Skaarl.");
+		System.out.println("\nEmpezó a buscarlo pero tenía que seguir cuanto antes su camino porque algo bueno le esperaba al final."
+				+ "\nContinuó hacia su destino pero cuando pasó por Shuryma se encontro con Skaarl.");
 				
 	}
 	
@@ -43,7 +43,15 @@ public class MensajeHitoriaKled {
 	public static void HistoriaKled5() {
 		System.out.println("n-¿Qué haces aquí?-pregunta sorprendido y decepcionado Kled-"
 				+ "\n-No tuve otra opción-contestó entre lágrimas-" 
-				+ "");
+				+ "\nY porq...!!!!"
+				+ "\nAntes de acabar Kled de preguntarle apreció Malzahar.");
+	}
+	
+	//TODO: imagen de Malzahar
+	
+	public static void HistoriaKled6() {
+		System.out.println("Fue él quien se llevó aquel día a Skaarl para atraer a Kled y acabar con él"
+				+ "Cuando se disponían a luchar, de repente apareció un esbirror"); 
 	}
 
 }
