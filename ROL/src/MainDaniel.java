@@ -6,6 +6,8 @@ import datos.DatosEnemigos;
 import datos.DatosLoot;
 import datos.DatosPersonajes;
 import model.enemigos.EnemigoPrincipal;
+import model.loot.LootAtaque;
+import model.loot.LootDefensa;
 import model.loot.LootPoderHabilidad;
 import model.personajes.Aatrox;
 import model.personajes.Azir;
@@ -27,11 +29,13 @@ public class MainDaniel {
 	public static void main(String[] args) {
 
 		int personaje, confirmar = 0, cero = 0, opciones, turno = 0, opcionMin = 1, opcionMax = 3,
-				opcionAtaqueHabil = 3;
+				opcionAtaqueHabil = 3, malzahar = 3, ornn = 0, shyvana = 1; 
 		DatosPersonajes dp = new DatosPersonajes();
 		DatosLoot dl = new DatosLoot();
 		DatosEnemigos de = new DatosEnemigos();
 		LootPoderHabilidad lph = new LootPoderHabilidad();
+		LootAtaque lAtaque = new LootAtaque();
+		LootDefensa lDefensa = new LootDefensa();
 		Aatrox aatrox;
 		Azir azir;
 		EnemigoPrincipal boss;
@@ -81,7 +85,7 @@ public class MainDaniel {
 		switch (personaje) {
 		case 1:
 			aatrox = dp.getAatrox();
-			boss = de.getListaEnemigosPpal()[1]; // Este me devuelve shyvana pero es de prueba
+			boss = de.getListaEnemigosPpal()[0]; // Este me devuelve shyvana pero es de prueba
 			ImpresionMensajes.HistoriaAatrox();
 			confirmar = Leer.datoInt();
 			if (confirmar != cero) {
@@ -101,18 +105,21 @@ public class MainDaniel {
 			break;
 		case 2:// Azir
 			azir = dp.getAzir();
-			boss = de.getListaEnemigosPpal()[0]; // Ornn
+			boss = de.getListaEnemigosPpal()[ornn]; // Ornn
 			// Historia
 			MensajeHistoriaAzir.historiaAzir();
 			ImpresionMapas.imprimirShurima();
 			MensajeHistoriaAzir.historiaAzir2();
 			ImpresionesEscenarios.ImprimirCastillo2();
+			MensajeHistoriaAzir.historiaAzir2v2();
 			opciones = Leer.datoInt();
 
 			ImpresionesTitulo.TituloOrnn();
 			ImpresionesEnemigos.imprimirOrnn();
 			MensajeHistoriaAzir.historiaAzir3();
+			MensajeHistoriaAzir.comenzarPelea();
 			opciones = Leer.datoInt();
+			
 			
 			do { // Primer Combate
 				ImpresionCombate1.imprimirAziryOrnn();
@@ -133,16 +140,19 @@ public class MainDaniel {
 				ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
 				MensajesPrueba.MostrarResultadoAzir(azir, boss);
 			} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
-			if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {// Sigue el juego si gana el combate
-				CrudAzir.resetearVida(azir);
+			if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {// Sigue el juego si gana el combate  
+				CrudAzir.resetearVida(azir); // Pone vida al maximo 
+				azir.setRecursos(azir.getRecursosMax()); // Pone recursos al maximo
 				ImpresionMensajes.AceptarLoot();
+				ImpresionLoot1.imprimirCofre();
 				opciones = Leer.datoInt();
 
 				lph = ControllerLoot.LootHabilidad(); //Asigno un loot de habilidad aleatorio
 				ImpresionMensajes.ImprimirLootHabilidad(lph, dl);
-				azir.setRecursos(azir.getRecursosMax() + lph.getRecursos());
+				azir.setRecursosMax(azir.getRecursosMax()+lph.getRecursos());
+				azir.setRecursos(azir.getRecursosMax());
 				azir.setPoderHabilidad(azir.getPoderHabilidad() + lph.getPoderHabilidad());
-				ImpresionMensajes.nuevasEstadisticasAzir(azir);
+				ImpresionMensajes.nuevasEstadisticasAzirLootHabilidad(azir);
 				ImpresionMensajes.saltarPantalla();
 				opciones = Leer.datoInt();
 				
@@ -164,7 +174,7 @@ public class MainDaniel {
 				opciones = Leer.datoInt(); //Elegir entre pelear o dar tu loot y perder
 				
 				if (opciones == 1) {
-					boss = de.getListaEnemigosPpal()[1];
+					boss = de.getListaEnemigosPpal()[shyvana]; //Shyvana
 					turno = 0;
 					MensajeHistoriaAzir.historiaAzir8();
 					do { //Segundo Combate
@@ -187,16 +197,93 @@ public class MainDaniel {
 						MensajesPrueba.MostrarResultadoAzir(azir, boss);
 						
 					} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
+					if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {// Sigue el juego si gana el segundo combate
+						CrudAzir.resetearVida(azir);
+						azir.setRecursos(azir.getRecursosMax());
+						ImpresionMensajes.AceptarLoot();
+						ImpresionLoot1.imprimirCofre();
+						opciones = Leer.datoInt();
+						
+						lAtaque = ControllerLoot.lootAtaque();
+						ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
+						azir.setAtaque(azir.getAtaque() + lAtaque.getAtaque());
+						azir.setVidaMaxima(azir.getVidaMaxima() + lAtaque.getVida());
+						azir.setVida(azir.getVidaMaxima());
+						ImpresionMensajes.nuevasEstadisticasAzirLootAtaque(azir);
+						ImpresionMensajes.saltarPantalla();
+						opciones = Leer.datoInt();
+						
+						MensajeHistoriaAzir.historiaAzir9();
+						ImpresionesEscenarios.ImprimirBosque();
+						ImpresionMensajes.saltarPantalla();
+						opciones = Leer.datoInt();
+						
+						MensajeHistoriaAzir.historiaAzir10();
+						ImpresionesEscenarios.ImprimirPiramide();
+						ImpresionMensajes.saltarPantalla();
+						opciones = Leer.datoInt();
+						
+						MensajeHistoriaAzir.historiaAzir11();
+						ImpresionesTitulo.Titulo1Malzahar();
+						ImpresionesEnemigos.imprimirMalzahar();
+						MensajeHistoriaAzir.comenzarPelea();
+						opciones = Leer.datoInt();
+						
+						boss = de.getListaEnemigosPpal()[malzahar];//Malzahar
+						turno = 0;
+						do { //Tercer Combate
+							ImpresionCombate1.imprimirAziryMalhazar();
+							turno++;
+							ImpresionMensajes.ImprimirTurnos(turno);
+							ImpresionMensajes.OpcionesCombateAzir(azir, boss);
+							opciones = Leer.datoInt();
+							while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no este entre
+																					// 1 y 3
+								ImpresionMensajes.ErrorOpciones();
+								opciones = Leer.datoInt();
+							}
+							while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
+																								// habilidad si no tiene recursos
+								ImpresionMensajes.ErrorRecursos();
+								opciones = Leer.datoInt();
+							}
+							ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
+							MensajesPrueba.MostrarResultadoAzir(azir, boss);
+							
+						} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
+						if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {// Sigue el juego si gana el tercer combate
+							CrudAzir.resetearVida(azir); // Pone vida al maximo 
+							azir.setRecursos(azir.getRecursosMax()); // Pone recursos al maximo
+							ImpresionMensajes.AceptarLoot();
+							ImpresionLoot1.imprimirCofre();
+							opciones = Leer.datoInt();
+
+							lDefensa = ControllerLoot.asignarLootDefensa(); //Asigno un loot de habilidad aleatorio
+							ImpresionMensajes.imprimirLootDefensa(lDefensa, dl);
+							azir.setDefensa(azir.getDefensa()+lDefensa.getDefensa());
+							azir.setVidaMaxima(azir.getVidaMaxima() + lDefensa.getVida());
+							azir.setVida(azir.getVidaMaxima());
+							ImpresionMensajes.nuevasEstadisticasAzirLootDefensa(azir);
+							ImpresionMensajes.saltarPantalla();
+							opciones = Leer.datoInt();
+						}
+						else {//Has perdido el tercer combate
+							ImpresionesTitulo.GameOver();
+						}
+						
+					}
+					else {//Has perdido el segundo combate
+						ImpresionesTitulo.GameOver();
+					}
 					
-					
-					
-				}else {
+				}else {// Shyvana te ha traicionado
 					ImpresionMensajes.traicionShyvana();
+					ImpresionesTitulo.GameOver();
 				}
 				
 			}
 			else {
-				System.out.println("Has perdido");
+				ImpresionesTitulo.GameOver();//Has perdido en el primer combate
 			}
 
 		default:

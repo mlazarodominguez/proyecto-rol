@@ -3,6 +3,7 @@ package vista;
 import datos.DatosLoot;
 import model.enemigos.EnemigoPrincipal;
 import model.loot.LootAtaque;
+import model.loot.LootDefensa;
 import model.loot.LootPoderHabilidad;
 import model.personajes.Aatrox;
 import model.personajes.Azir;
@@ -142,6 +143,7 @@ public class ImpresionMensajes {
 					+ lph.getRecursos() + " ↑");
 		}
 		if (lph.getNombre().equals(dl.getListaLootPoderHabilidad()[2].getNombre())) {
+			ImpresionesTitulo.Legendario();
 			ImpresionLoot1.imprimirRabadon();
 			System.out.println("\nLEGENDARIOO !!! : " + lph.getNombre());
 			System.out.println("Poder de habilidad : " + lph.getPoderHabilidad() + " ↑" + "\n" + "Rescursos : "
@@ -161,23 +163,54 @@ public class ImpresionMensajes {
 			System.out.println("Ataque : " + lph.getAtaque() + " ↑" + "\n" + "Vida : " + lph.getVida() + " ↑");
 		}
 		if (lph.getNombre().equals(dl.getListaLootAtaque()[2].getNombre())) {
+			ImpresionesTitulo.Legendario();
 			ImpresionLoot1.imprimirTrinidad();
 			System.out.println("\nLEGENDARIOO !!! : " + lph.getNombre());
 			System.out.println("Ataque : " + lph.getAtaque() + " ↑" + "\n" + "Vida : " + lph.getVida() + " ↑");
 		}
 	}
+	public static void imprimirLootDefensa(LootDefensa lDefensa, DatosLoot dl) {
+		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[0].getNombre())) {
+			//TODO Imprimir randuin 
+			System.out.println("\nObjeto común : " + lDefensa.getNombre());
+			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
+					+ lDefensa.getVida() + " ↑");
+		}
+		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[1].getNombre())) {
+			//TODO imprimir sterak
+			System.out.println("\nObjeto Épico : " + lDefensa.getNombre());
+			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
+					+ lDefensa.getVida() + " ↑");
+		}
+		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[2].getNombre())) {
+			ImpresionesTitulo.Legendario();
+			ImpresionLoot1.imprimirShurelya();
+			System.out.println("\nLEGENDARIOO !!! : " + lDefensa.getNombre());
+			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
+					+ lDefensa.getVida() + " ↑");
+		}
+	}
+	
 
 	public static void AceptarLoot() {
 		System.out.println("Le has pateado el culo a ese jefe. Pulsa cualquier número para reclamar tu recompensa.");
 	}
 
-	public static void nuevasEstadisticasAzir(Azir azir) {
+	public static void nuevasEstadisticasAzirLootHabilidad(Azir azir) {
 		System.out.println("Nuevos Recursos : " + azir.getRecursos());
 		System.out.println("Nuevo poder de habilidad : " + azir.getPoderHabilidad());
 	}
+	public static void nuevasEstadisticasAzirLootAtaque(Azir azir) {
+		System.out.println("Nuevo Ataque : " + azir.getAtaque());
+		System.out.println("Nueva Vida Máxima : " + azir.getVida());
+	}
+	public static void nuevasEstadisticasAzirLootDefensa(Azir azir) {
+		System.out.println("Nueva Defensa : " + azir.getDefensa());
+		System.out.println("Nueva Vida Máxima : " + azir.getVida());
+	}
 	public static void traicionShyvana() {
 		System.out.println("\nShyvana te ha traicionado. Has sido destruido\n");
-		ImpresionesTitulo.TituloFinal();
+		
 	}
 
 }

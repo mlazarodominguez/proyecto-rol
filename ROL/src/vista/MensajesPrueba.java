@@ -12,7 +12,7 @@ public class MensajesPrueba {
 		}
 		if (boss.getVida() > 0 && azir.getVida() <= 0) {
 			System.out.println("\n"+ boss.getNombre() +" ♥ "+ boss.getVida() + "\t\t Azir ♥ " + azir.getVida());
-			System.out.println("Has perdido");
+			ImpresionesTitulo.GameOver();
 		}
 		if (boss.getVida() <= 0 && azir.getVida() <= 0) {
 			System.out.println("\n"+ boss.getNombre() +" ♥ "+ boss.getVida() + "\t\t Azir ♥ " + azir.getVida());
