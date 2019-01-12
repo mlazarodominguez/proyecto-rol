@@ -171,13 +171,13 @@ public class ImpresionMensajes {
 	}
 	public static void imprimirLootDefensa(LootDefensa lDefensa, DatosLoot dl) {
 		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[0].getNombre())) {
-			//TODO Imprimir randuin 
+			ImpresionLoot1.imprimirpresagio();
 			System.out.println("\nObjeto común : " + lDefensa.getNombre());
 			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
 					+ lDefensa.getVida() + " ↑");
 		}
 		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[1].getNombre())) {
-			//TODO imprimir sterak
+			ImpresionLoot1.imprimirCalibrador();
 			System.out.println("\nObjeto Épico : " + lDefensa.getNombre());
 			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
 					+ lDefensa.getVida() + " ↑");

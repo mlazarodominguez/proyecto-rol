@@ -15,7 +15,7 @@ public class MensajeHistoriaAzir {
 	
 	public static void historiaAzir2() {
 		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador a las puertas del castillo, una oleada de energia lo golpeo empujándolo, era Ornn un semidiós de Freljord,\n"
-				+"el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos\n");
+				+"el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos.\n");
 	}
 	public static void historiaAzir2v2() {
 		System.out.println("*Pulsa cualquier número para luchar contra Ornn y vengar a los tuyos\n");
@@ -37,7 +37,8 @@ public class MensajeHistoriaAzir {
 		System.out.println("\nUn Azir nuevo empezó su camino con un pequeño barco que estaba abandonado en Shurima con destino a Valoran.\n");
 	}
 	public static void historiaAzir6() {
-		System.out.println("\nUnos días más tarde Azir seguía con su camino a poco tiempo de llegar a su destino pero con lo que el no contaba e");
+		System.out.println("\nUnos días más tarde Azir seguía con su camino a poco tiempo de llegar a su destino pero con lo que el no contaba es que Shyvana medio dragón medio humano\n"
+				+ "lo encontrase en lo más profundo del oceano\n");
 	}
 	public static void historiaAzir7(LootPoderHabilidad lph) {
 		System.out.println("\nShyvana : 'Has vuelto... Ornn nunca te dejaría salir de Shurima'");
@@ -60,11 +61,50 @@ public class MensajeHistoriaAzir {
 				+ "el nexo de energía Mordekaiser y así debilitarlo.\n");
 	}
 	public static void historiaAzir11() {
-		System.out.println("Pero esto no iba coser y cantar debía antes pasar por encima del guardián de la pirámide Malzahar el profeta del vacío el mago más poderoso de Valoran\n"
-				+ "y fiel aliado de Mordekaiser(se rumorea que tenían una relación amorosa)");
-		System.out.println("Malzahar : 'JAJAJAJA... Pero Azir ya quieres volver a la tumba te doy 10 segundos para salir corriendo'");
-		System.out.println("Azir : 'Ya sabes lo que he venido hacer, únete a mi y seremos más fuertes pero no te confundas a mi me gustan las elfas no los elfos'");
-		System.out.println("Malzahar : ¿¿QUÉ?? ¿¿QUÉ ESTÁS INSINUANDO?? ¡¡AAAAAAAAGHHHHH!!");
+		System.out.println("Pero esto no iba ser coser y cantar debía antes pasar por encima del guardián de la pirámide, Malzahar el profeta del vacío el mago más poderoso de Valoran\n"
+				+ "y fiel aliado de Mordekaiser(se rumorea que tenían una relación amorosa)\n");
+		System.out.println("Malzahar : 'JAJAJAJA... Pero Azir ya quieres volver a la tumba te doy 10 segundos para salir corriendo'\n");
+		System.out.println("Azir : 'Ya sabes lo que he venido hacer, únete a mi y seremos más fuertes pero no te confundas a mi me gustan las elfas no los elfos'\n");
+		System.out.println("Malzahar : '¿¿QUÉ?? ¿¿QUÉ ESTÁS INSINUANDO?? ¡¡AAAAAAAAGHHHHH!!'\n");
+	}
+	public static void historiaAzir12() {
+		System.out.println("\nEl nexo de la pirámide de Zoser está hecho añicos, Azir sabía que era el momento de atacar Mordekaiser estaba debilitado. Tan solo tenía que encontrarlo\n"
+				+ "y tenía que estar en la pirámide el nunca se separaría de nexo de energía\n");
+		System.out.println("Azir : 'Mordekaiseeeer, sal ratita déjame verte la colita'\n");
+		System.out.println("Mordekaiser : 'Azir sabes que yo siempre te he respetado, déjame ir nunca diré nada y estaré para lo que me ordenes ¡¡TE LO SUPLICO!!'\n");
+		System.out.println("Azir : JAJAJA... Déjame pensarlo ehhh?...\n\n");
+	}
+	public static void matarMordekaiser() {
+		System.out.println("*Pulsa 1 para pelear contra Mordekaiser");
+	}
+	public static void historiaAzir13() {
+		System.out.println("Leeroy si Leeroy Jenkins es lo que separa a Azir de la gloria eterna. Leeroy es el rey de Runaterra lleva siéndolo cientos de años.\n"
+				+ "Se alojaba en la capital de Runaterra, Ionia una tierra de belleza pura y magia natural");
+	}
+	public static void historiaAzir14() {
+		System.out.println("\nEs el nuevo destino de Azir, lo último que le queda por hacer y conseguirá que lo que siempre quisó ser, pero estaba exhausto necesitaba descansar, al menos el camino era largo y podría reponer fuerzas."
+				);
+	}
+	public static void historiaAzir15() {
+		System.out.println("\nAlgunos días más tarde...\n");
+		System.out.println("El castillo de los lamentos ahí se aloja Leeroy Jenkins y ahí estaba Azir a las puertas cantando imaginando la gloria que le esperaba.");
+		System.out.println("Azir : 'Leeeeeeeeroy Jenkins tu reinado ha llegado a su fín sal y da la cara cobarde' Gritaba desde los patios del castillo'\n");
+	}
+	public static void historiaAzir16() {
+		System.out.println("Leeroy Jenkins : 'Azir has derrotado a todos, no está mal pero te quedo yo ¿¿Qué piensas hacer contra mi??'\n"
+				+ "Azir : 'Llevo esperando este momento mucho tiempo no lo hagamos más largo dame el poder y deja paso al rey heredero'\n"
+				+ "Leeroy : 'Veo que sigues igual de arrogante y no te sirvió de mucho para protegerte a ti y tu pueblo de la extinción JAJAAJAJA'\n"
+				+ "Azir : 'Te arrepentirás de estas palabras...\n'");
+	}
+	public static void historiaAzir17() {
+		System.out.println("*Pulsa 1 para pelear contra Leeroy y ser el rey de Runaterra");
+	}
+	public static void historiaAzir18() {
+		System.out.println("\nLo has conseguido Azir es el nuevo rey de Runaterra. Azir siempre te estará agradecido por llevarlo al lugar que le corresponde.\n");
+	}
+	public static void historiaAzir19() {
+		System.out.println("\n*Pulsa 1 para ver los créditos");
+		System.out.println("Pulsa 0 para acabar el juego");
 	}
 
 }

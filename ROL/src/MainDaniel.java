@@ -29,11 +29,12 @@ public class MainDaniel {
 	public static void main(String[] args) {
 
 		int personaje, confirmar = 0, cero = 0, opciones, turno = 0, opcionMin = 1, opcionMax = 3,
-				opcionAtaqueHabil = 3, malzahar = 3, ornn = 0, shyvana = 1; 
+				opcionAtaqueHabil = 3, malzahar = 3, ornn = 0, shyvana = 1, mordekaiser = 4, leeroy = 2; 
 		DatosPersonajes dp = new DatosPersonajes();
 		DatosLoot dl = new DatosLoot();
 		DatosEnemigos de = new DatosEnemigos();
 		LootPoderHabilidad lph = new LootPoderHabilidad();
+		LootPoderHabilidad lph2 = new LootPoderHabilidad();
 		LootAtaque lAtaque = new LootAtaque();
 		LootDefensa lDefensa = new LootDefensa();
 		Aatrox aatrox;
@@ -156,6 +157,7 @@ public class MainDaniel {
 				ImpresionMensajes.saltarPantalla();
 				opciones = Leer.datoInt();
 				
+				//Sigue la historio para derrotar al segundo jefe
 				MensajeHistoriaAzir.historiaAzir4();
 				ImpresionesTitulo.Titulo1();
 				ImpresionMapas.imprimirmapaGeneral();
@@ -213,6 +215,7 @@ public class MainDaniel {
 						ImpresionMensajes.saltarPantalla();
 						opciones = Leer.datoInt();
 						
+						//Sigue la historia para derrotar al tercer jefe
 						MensajeHistoriaAzir.historiaAzir9();
 						ImpresionesEscenarios.ImprimirBosque();
 						ImpresionMensajes.saltarPantalla();
@@ -266,24 +269,136 @@ public class MainDaniel {
 							ImpresionMensajes.nuevasEstadisticasAzirLootDefensa(azir);
 							ImpresionMensajes.saltarPantalla();
 							opciones = Leer.datoInt();
+							
+							//Sigue historia para derrotar al cuarto jefe
+							MensajeHistoriaAzir.historiaAzir12();
+							ImpresionesTitulo.tituloMordekaiser();
+							ImpresionesEnemigos.imprimirMordekaiser();
+							MensajeHistoriaAzir.matarMordekaiser();
+							opciones = Leer.datoInt();
+							
+							boss = de.getListaEnemigosPpal()[mordekaiser]; //Mordekaiser
+							turno = 0;
+							do { //Cuarto Combate
+								ImpresionCombate1.imprimirAziryMordekaiser();
+								turno++;
+								ImpresionMensajes.ImprimirTurnos(turno);
+								ImpresionMensajes.OpcionesCombateAzir(azir, boss);
+								opciones = Leer.datoInt();
+								while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no este entre
+																						// 1 y 3
+									ImpresionMensajes.ErrorOpciones();
+									opciones = Leer.datoInt();
+								}
+								while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
+																									// habilidad si no tiene recursos
+									ImpresionMensajes.ErrorRecursos();
+									opciones = Leer.datoInt();
+								}
+								ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
+								MensajesPrueba.MostrarResultadoAzir(azir, boss);
+								
+							} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
+							if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {// Sigue el juego si gana el cuarto combate
+								CrudAzir.resetearVida(azir);
+								azir.setRecursos(azir.getRecursosMax());
+								ImpresionMensajes.AceptarLoot();
+								ImpresionLoot1.imprimirCofre();
+								opciones = Leer.datoInt();
+								
+								lph2 = ControllerLoot.LootHabilidad(); //Asigno un loot de habilidad aleatorio
+								while (lph2.getNombre().equals(lph.getNombre())) { //Bucle para que no se repita el mismo looteo que te dio antes
+									lph2 = ControllerLoot.LootHabilidad();
+								}
+								ImpresionMensajes.ImprimirLootHabilidad(lph2, dl);
+								azir.setRecursosMax(azir.getRecursosMax()+lph2.getRecursos());
+								azir.setRecursos(azir.getRecursosMax());
+								azir.setPoderHabilidad(azir.getPoderHabilidad() + lph2.getPoderHabilidad());
+								ImpresionMensajes.nuevasEstadisticasAzirLootHabilidad(azir);
+								ImpresionMensajes.saltarPantalla();
+								opciones = Leer.datoInt();
+								
+								//Sigue la historia para derrotar al quinto y último jefe
+								MensajeHistoriaAzir.historiaAzir13();
+								ImpresionesTitulo.Titulo4();
+								ImpresionMapas.imprimirIonia();
+								ImpresionMensajes.saltarPantalla();
+								opciones = Leer.datoInt();
+								
+								MensajeHistoriaAzir.historiaAzir14();
+								ImpresionesEscenarios.ImprimirBarco();
+								MensajeHistoriaAzir.historiaAzir15();
+								ImpresionesEscenarios.ImprimirCastillo();
+								ImpresionMensajes.saltarPantalla();
+								opciones = Leer.datoInt();
+								
+								MensajeHistoriaAzir.historiaAzir16();
+								ImpresionesTitulo.TituloLeeroy();
+								ImpresionesEnemigos.imprimirLeeroyJenkins();
+								MensajeHistoriaAzir.historiaAzir17();
+								opciones = Leer.datoInt();
+								
+								boss = de.getListaEnemigosPpal()[leeroy]; //Leeroy
+								turno = 0;
+								do { //Quinto Combate
+									ImpresionCombate1.imprimirAziryLeeroy();
+									turno++;
+									ImpresionMensajes.ImprimirTurnos(turno);
+									ImpresionMensajes.OpcionesCombateAzir(azir, boss);
+									opciones = Leer.datoInt();
+									while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no este entre
+																							// 1 y 3
+										ImpresionMensajes.ErrorOpciones();
+										opciones = Leer.datoInt();
+									}
+									while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
+																										// habilidad si no tiene recursos
+										ImpresionMensajes.ErrorRecursos();
+										opciones = Leer.datoInt();
+									}
+									ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
+									MensajesPrueba.MostrarResultadoAzir(azir, boss);
+									
+								} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
+								if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {
+									MensajeHistoriaAzir.historiaAzir18();
+									ImpresionesTitulo.TituloFinal();
+									MensajeHistoriaAzir.historiaAzir19();
+									opciones = Leer.datoInt();
+									
+									if (opciones == 1) {
+										ImpresionesTitulo.Creditos();
+									}
+									else {
+										
+									}
+								}
+								else {//Has perdido el quinto combate
+									ImpresionesTitulo.teHanMatado();
+								}
+							}
+							else {//Has perdido el cuarto combate
+								ImpresionesTitulo.teHanMatado();
+							}
+							
 						}
 						else {//Has perdido el tercer combate
-							ImpresionesTitulo.GameOver();
+							ImpresionesTitulo.teHanMatado();
 						}
 						
 					}
 					else {//Has perdido el segundo combate
-						ImpresionesTitulo.GameOver();
+						ImpresionesTitulo.teHanMatado();
 					}
 					
 				}else {// Shyvana te ha traicionado
 					ImpresionMensajes.traicionShyvana();
-					ImpresionesTitulo.GameOver();
+					ImpresionesTitulo.teHanMatado();
 				}
 				
 			}
-			else {
-				ImpresionesTitulo.GameOver();//Has perdido en el primer combate
+			else {//Has perdido en el primer combate
+				ImpresionesTitulo.teHanMatado();
 			}
 
 		default:
