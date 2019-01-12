@@ -12,6 +12,7 @@ import model.personajes.Aatrox;
 import model.personajes.Azir;
 import utilidades.Leer;
 import vista.ImpresionCombate1;
+import vista.ImpresionLoot1;
 import vista.ImpresionMapas;
 import vista.ImpresionMensajes;
 import vista.ImpresionMenu;
@@ -83,6 +84,7 @@ public class MainMiguel {
 			aatrox = dp.getAatrox();
 			boss = de.getListaEnemigosPpal()[0];
 			MensajesHistoriaAatrox.impresionPantalla1();
+			ImpresionesTitulo.Titulo1();
 			ImpresionMapas.imprimirmapaGeneral();
 			ImpresionMensajes.saltarPantalla();
 			do {
@@ -97,6 +99,7 @@ public class MainMiguel {
 				saltoPantalla = Leer.datoInt();
 			} while (saltoPantalla != 1);
 			MensajesHistoriaAatrox.impresion1Pantalla3();
+			ImpresionesTitulo.Titulo3();
 			ImpresionMapas.imprimirShurima();
 			ImpresionesEscenarios.ImprimirPiramide();
 			MensajesHistoriaAatrox.impresion2Pantalla3();
@@ -122,7 +125,7 @@ public class MainMiguel {
 
 					opciones = Leer.datoInt();
 				}
-				while(opciones==opcionAtaqueHabil && aatrox.getVida()< ControllerAatrox.gastoRecursos(aatrox)) {
+				while (opciones == opcionAtaqueHabil && aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
 					ImpresionMensajes.ErrorRecursos();
 					opciones = Leer.datoInt();
 				}
@@ -130,19 +133,271 @@ public class MainMiguel {
 				ImpresionMensajes.MostrarResultadoAatrox(aatrox, boss);
 
 			} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
-			if(aatrox.getVida()>0.0 && boss.getVida() <=0.0) {
+			if (aatrox.getVida() > 0.0 && boss.getVida() <= 0.0) {
+				ImpresionLoot1.imprimirCofre();
 				ImpresionMensajes.AceptarLoot();
 				opciones = Leer.datoInt();
 				lAtaque = ControllerLoot.lootAtaque();
 				ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
-				aatrox.setAtaque(aatrox.getAtaque()+lAtaque.getAtaque());
+				aatrox.setAtaque(aatrox.getAtaque() + lAtaque.getAtaque());
 				aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lAtaque.getVida());
 				aatrox.setVida(aatrox.getVidaMaxima());
-				
-				
-				
-				
-			}else {
+				ImpresionMensajes.saltarPantalla();
+				do {
+					saltoPantalla = Leer.datoInt();
+				} while (saltoPantalla != 1);
+				MensajesHistoriaAatrox.impresion1Pantalla5();
+				ImpresionesTitulo.TituloShyvana();
+				ImpresionesEnemigos.imprimirShyvana();
+				MensajesHistoriaAatrox.impresion2Pantalla5();
+				ImpresionesEscenarios.ImprimirBosque();
+				ImpresionMensajes.saltarPantalla();
+				do {
+					saltoPantalla = Leer.datoInt();
+
+				} while (saltoPantalla != 1);
+				MensajesHistoriaAatrox.impresion1Pantalla6();
+				ImpresionesTitulo.TituloShyvana();
+				ImpresionesEnemigos.imprimirShyvana();
+				MensajesHistoriaAatrox.impresion2Pantalla6();
+				opciones = Leer.datoInt();
+				do {
+					boss = de.getListaEnemigosPpal()[1];
+					ImpresionCombate1.imprimirAatroxyShyvana();
+					turno++;
+					ImpresionMensajes.ImprimirTurnos(turno);
+					ImpresionMensajes.OpcionesCombateAatrox(aatrox, boss);
+
+					while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no este
+																			// entre
+						// 1 y 3
+
+						ImpresionMensajes.ErrorOpciones();
+
+						opciones = Leer.datoInt();
+					}
+					while (opciones == opcionAtaqueHabil && aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+						ImpresionMensajes.ErrorRecursos();
+						opciones = Leer.datoInt();
+					}
+					ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
+					ImpresionMensajes.MostrarResultadoAatrox(aatrox, boss);
+
+				} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
+				if (aatrox.getVida() > 0.0 && boss.getVida() <= 0.0) {
+					ImpresionLoot1.imprimirCofre();
+					ImpresionMensajes.AceptarLoot();
+					opciones = Leer.datoInt();
+					lAtaque = ControllerLoot.lootAtaque();
+					ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
+					aatrox.setAtaque(aatrox.getAtaque() + lAtaque.getAtaque());
+					aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lAtaque.getVida());
+					aatrox.setVida(aatrox.getVidaMaxima());
+					ImpresionMensajes.saltarPantalla();
+					do {
+						saltoPantalla = Leer.datoInt();
+
+					} while (saltoPantalla != 1);
+					MensajesHistoriaAatrox.impresion1Pantalla7();
+					ImpresionMapas.imprimirmapaValoran();
+					ImpresionMapas.imprimirIonia();
+					ImpresionMensajes.saltarPantalla();
+					do {
+						saltoPantalla = Leer.datoInt();
+					} while (saltoPantalla != 1);
+					MensajesHistoriaAatrox.impresion1Pantalla8();
+					ImpresionesTitulo.Titulo2();
+					ImpresionMapas.imprimirmapaValoran();
+					ImpresionesEscenarios.ImprimirBarco();
+					ImpresionMensajes.saltarPantalla();
+					do {
+						saltoPantalla = Leer.datoInt();
+					} while (saltoPantalla != 1);
+					MensajesHistoriaAatrox.impresion1Pantalla9();
+					ImpresionesEscenarios.ImprimirBosque();
+					MensajesHistoriaAatrox.impresion2Pantalla9();
+					ImpresionMensajes.saltarPantalla();
+					do {
+						saltoPantalla = Leer.datoInt();
+					} while (saltoPantalla != 1);
+					MensajesHistoriaAatrox.impresion2Pantalla10();
+					ImpresionesEscenarios.ImprimirCastillo();
+					MensajesHistoriaAatrox.impresion2Pantalla10();
+					ImpresionMensajes.saltarPantalla();
+					do {
+						saltoPantalla = Leer.datoInt();
+					} while (saltoPantalla != 1);
+					MensajesHistoriaAatrox.impresion1Pantalla11();
+					ImpresionesTitulo.Titulo1Malzahar();
+					ImpresionesEnemigos.imprimirMalzahar();
+					MensajesHistoriaAatrox.impresion2Pantalla11();
+					opciones = Leer.datoInt();
+					do {
+						boss = de.getListaEnemigosPpal()[2];
+						ImpresionCombate1.imprimirAatroxyMalhazar();
+						turno++;
+						ImpresionMensajes.ImprimirTurnos(turno);
+						ImpresionMensajes.OpcionesCombateAatrox(aatrox, boss);
+
+						while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no
+																				// este
+																				// entre
+							// 1 y 3
+
+							ImpresionMensajes.ErrorOpciones();
+
+							opciones = Leer.datoInt();
+						}
+						while (opciones == opcionAtaqueHabil
+								&& aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+							ImpresionMensajes.ErrorRecursos();
+							opciones = Leer.datoInt();
+						}
+						ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
+						ImpresionMensajes.MostrarResultadoAatrox(aatrox, boss);
+
+					} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
+					if (aatrox.getVida() > 0.0 && boss.getVida() <= 0.0) {
+						ImpresionLoot1.imprimirCofre();
+						ImpresionMensajes.AceptarLoot();
+						opciones = Leer.datoInt();
+						lAtaque = ControllerLoot.lootAtaque();
+						ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
+						aatrox.setAtaque(aatrox.getAtaque() + lAtaque.getAtaque());
+						aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lAtaque.getVida());
+						aatrox.setVida(aatrox.getVidaMaxima());
+						ImpresionMensajes.saltarPantalla();
+						do {
+							saltoPantalla = Leer.datoInt();
+
+						} while (saltoPantalla != 1);
+						MensajesHistoriaAatrox.impresion1Pantalla12();
+						ImpresionesEscenarios.ImprimirBosque();
+						MensajesHistoriaAatrox.impresion2Pantalla11();
+						ImpresionMensajes.saltarPantalla();
+						do {
+							saltoPantalla = Leer.datoInt();
+						} while (saltoPantalla != 1);
+						MensajesHistoriaAatrox.impresion1Pantalla13();
+						ImpresionesEscenarios.ImprimirCastillo2();
+						MensajesHistoriaAatrox.impresion2Pantalla13();
+						ImpresionMensajes.saltarPantalla();
+						do {
+							saltoPantalla = Leer.datoInt();
+						} while (saltoPantalla != 1);
+						MensajesHistoriaAatrox.impresion1Pantalla14();
+						ImpresionesTitulo.tituloMordekaiser();
+						ImpresionesEnemigos.imprimirMordekaiser();
+						MensajesHistoriaAatrox.impresion2Pantalla14();
+						opciones = Leer.datoInt();
+						do {
+							boss = de.getListaEnemigosPpal()[3];
+							ImpresionCombate1.imprimirAatroxymordekaiser();
+							turno++;
+							ImpresionMensajes.ImprimirTurnos(turno);
+							ImpresionMensajes.OpcionesCombateAatrox(aatrox, boss);
+
+							while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que
+																					// no
+																					// este
+																					// entre
+								// 1 y 3
+
+								ImpresionMensajes.ErrorOpciones();
+
+								opciones = Leer.datoInt();
+							}
+							while (opciones == opcionAtaqueHabil
+									&& aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+								ImpresionMensajes.ErrorRecursos();
+								opciones = Leer.datoInt();
+							}
+							ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
+							ImpresionMensajes.MostrarResultadoAatrox(aatrox, boss);
+
+						} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
+						if (aatrox.getVida() > 0.0 && boss.getVida() <= 0.0) {
+							ImpresionLoot1.imprimirCofre();
+							ImpresionMensajes.AceptarLoot();
+							opciones = Leer.datoInt();
+							lAtaque = ControllerLoot.lootAtaque();
+							ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
+							aatrox.setAtaque(aatrox.getAtaque() + lAtaque.getAtaque());
+							aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lAtaque.getVida());
+							aatrox.setVida(aatrox.getVidaMaxima());
+							ImpresionMensajes.saltarPantalla();
+							do {
+								saltoPantalla = Leer.datoInt();
+
+							} while (saltoPantalla != 1);
+							MensajesHistoriaAatrox.impresion1Pantalla15();
+							ImpresionesEscenarios.ImprimirBarco();
+							MensajesHistoriaAatrox.impresion2Pantalla15();
+							ImpresionMensajes.saltarPantalla();
+							do {
+								saltoPantalla = Leer.datoInt();
+							} while (saltoPantalla != 1);
+							MensajesHistoriaAatrox.impresion1Pantalla16();
+							ImpresionesTitulo.Titulo4();
+							ImpresionMapas.imprimirIonia();
+							MensajesHistoriaAatrox.impresion2Pantalla16();
+							ImpresionMensajes.saltarPantalla();
+							do {
+								saltoPantalla = Leer.datoInt();
+							} while (saltoPantalla != 1);
+							MensajesHistoriaAatrox.impresion1Pantalla17();
+							ImpresionesEscenarios.ImprimirBosque();
+							MensajesHistoriaAatrox.impresion2Pantalla17();
+							ImpresionMensajes.saltarPantalla();
+							do {
+								saltoPantalla = Leer.datoInt();
+							} while (saltoPantalla != 1);
+							MensajesHistoriaAatrox.impresion1Pantalla18();
+							ImpresionesTitulo.TituloLeeroy();
+							ImpresionesEnemigos.imprimirLeeroyJenkins();
+							MensajesHistoriaAatrox.impresion2Pantalla18();
+							opciones = Leer.datoInt();
+							do {
+								boss = de.getListaEnemigosPpal()[4];
+								ImpresionCombate1.imprimirAatroxyLeeroy();
+								turno++;
+								ImpresionMensajes.ImprimirTurnos(turno);
+								ImpresionMensajes.OpcionesCombateAatrox(aatrox, boss);
+
+								while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion
+																						// que
+																						// no
+																						// este
+																						// entre
+									// 1 y 3
+
+									ImpresionMensajes.ErrorOpciones();
+
+									opciones = Leer.datoInt();
+								}
+								while (opciones == opcionAtaqueHabil
+										&& aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+									ImpresionMensajes.ErrorRecursos();
+									opciones = Leer.datoInt();
+								}
+								ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
+								ImpresionesTitulo.TituloFinal();
+								ImpresionesTitulo.Creditos();
+
+							} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
+
+						} else {
+							System.out.println("Game over, no vales ni para estar sentado.");
+						}
+
+					} else {
+						System.out.println("Game over, no vales ni para estar sentado.");
+					}
+
+				} else {
+					System.out.println("Game over, no vales ni para estar sentado.");
+				}
+			} else {
 				System.out.println("Game over, no vales ni para estar sentado.");
 			}
 
