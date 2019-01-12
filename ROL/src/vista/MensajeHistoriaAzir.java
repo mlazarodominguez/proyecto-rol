@@ -14,10 +14,25 @@ public class MensajeHistoriaAzir {
 	}
 	
 	public static void historiaAzir2() {
-		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador a las puertas del castillo, una oleada de energia lo golpeo empujándolo, era Ornn un semidiós de Freljord,\n"
-				+"el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos.\n");
+		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador a las puertas del catillo, se encontró con Neeko una cambiaformas una de las pocas supervivientes.\n"
+				+ "Neeko siempre habia sido una fiel amiga de Azir, lucharon en el mismo bando en muchas guerras");
+		//Imprimir Neeko
+	}
+	public static void historiaAzir2v1() {
+		System.out.println("Neeko : 'Azir ¿¿Eres tú?? No es posible, yo te vi morir...'");
+		System.out.println("Azir : 'Neeko estoy muy débil he vuelto de entre los muertos pero noto que mi magia ya no está en mi interior'" );
+		System.out.println("Neeko : 'SHHHHH... Silencio Azir, Ornn no debe andar muy lejos'");
+		System.out.println("Azir : 'No podré hacer nada contra él sino me ayudas Neeko, necesito mi magia'");
+		System.out.println("Neeko : 'Está bien Azir, solo hay una forma de hacerlo venga a nuestro pueblo en mi nombre...'");
+		System.out.println("Azir : 'NEEKOOOO ESPERA NOOOOOOO!!!!!!!!!!'");
+		System.out.println("Neeko recurrió al conjuro de magia oscuro más poderoso que existe aún sabiendo que no sobreviviría\n");
+		//Imprimir castillo
 	}
 	public static void historiaAzir2v2() {
+		System.out.println("\nAzir de nuevo poderoso pero hundido tras la muerte Neeko se dispone a entrar en el castillo pero una oleada de energia lo golpea empujándolo, era Ornn\n"
+				+ "un semidiós de Freljord,el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos.\n");
+	}
+	public static void historiaAzir2v3() {
 		System.out.println("*Pulsa cualquier número para luchar contra Ornn y vengar a los tuyos\n");
 	}
 	

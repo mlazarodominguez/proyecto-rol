@@ -85,24 +85,7 @@ public class MainDaniel {
 
 		switch (personaje) {
 		case 1:
-			aatrox = dp.getAatrox();
-			boss = de.getListaEnemigosPpal()[0]; // Este me devuelve shyvana pero es de prueba
-			ImpresionMensajes.HistoriaAatrox();
-			confirmar = Leer.datoInt();
-			if (confirmar != cero) {
-				ImpresionCombate1.imprimirAatroxyEsbirro(); // De prueba
-				do {
-					turno++;
-					ImpresionMensajes.ImprimirTurnos(turno);
-					ImpresionMensajes.OpcionesCombateAatrox(aatrox, boss);
-					opciones = Leer.datoInt();
-					ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
-					System.out.println("Vida Aatrox: " + aatrox.getVida());
-					System.out.println("Vida Boss: " + boss.getVida());
-				} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
-			} else {
-
-			}
+			
 			break;
 		case 2:// Azir
 			azir = dp.getAzir();
@@ -110,9 +93,19 @@ public class MainDaniel {
 			// Historia
 			MensajeHistoriaAzir.historiaAzir();
 			ImpresionMapas.imprimirShurima();
+			ImpresionMensajes.saltarPantalla();
+			opciones = Leer.datoInt();
+			
 			MensajeHistoriaAzir.historiaAzir2();
-			ImpresionesEscenarios.ImprimirCastillo2();
+			ImpresionesTitulo.TituloNeeko();
+			ImpresionesPersonajes.imprimirNeeko();
+			ImpresionMensajes.saltarPantalla();
+			opciones = Leer.datoInt();
+			
+			MensajeHistoriaAzir.historiaAzir2v1();
 			MensajeHistoriaAzir.historiaAzir2v2();
+			ImpresionesEscenarios.ImprimirCastillo2();
+			MensajeHistoriaAzir.historiaAzir2v3();
 			opciones = Leer.datoInt();
 
 			ImpresionesTitulo.TituloOrnn();
@@ -157,7 +150,7 @@ public class MainDaniel {
 				ImpresionMensajes.saltarPantalla();
 				opciones = Leer.datoInt();
 				
-				//Sigue la historio para derrotar al segundo jefe
+				//Sigue la historia para derrotar al segundo jefe
 				MensajeHistoriaAzir.historiaAzir4();
 				ImpresionesTitulo.Titulo1();
 				ImpresionMapas.imprimirmapaGeneral();

@@ -27,8 +27,8 @@ public class MensajesHistoriaNeeko {
 		
 	public static void historiaNeeko3() {
 	
-	System.out.println("\nTras la derrota del malvado mago, Neeko se dispone a ir a la bahia de un pueblo llamado Trigroma para poder navegar asta Shurima donde encontraria a otras malvadas criaturas"
-			+ "que amenazan Runaterra. \nAl llegar a la bahia encontro a un malvado Verdugo el cual se dedicava a sembrar el panico en la bahia."
+	System.out.println("\nTras la derrota del malvado mago, Neeko se dispone a ir a la bahia de un pueblo llamado Trigroma para poder navegar hasta Shurima donde encontraria a otras malvadas criaturas"
+			+ "que amenazan Runaterra. \nAl llegar a la bahia encontro a un malvado Verdugo el cual se dedicaba a sembrar el panico en la bahia."
 			+ "\nNeeko: ¿Que haces con esos barcos y trabajadores del puerto?"
 			+ "\nMordekaiser: Me dedico a que cumplan mis normas y destrullan todas las naves que no pertenezcan a mi ejercito de Trapero");
 	System.out.println("\nNeeko: Pues se te acabo tus dias de maton, destruire tu ejercito y me obsequiare con barco.");
