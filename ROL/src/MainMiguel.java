@@ -1,12 +1,16 @@
 
+import java.util.Random;
+
 import controller.combate.ControllerCombateAatrox;
 import controller.loot.ControllerLoot;
 import controller.personajes.ControllerAatrox;
 import datos.DatosEnemigos;
 import datos.DatosLoot;
 import datos.DatosPersonajes;
+import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 import model.loot.LootAtaque;
+import model.loot.LootDefensa;
 import model.loot.LootPoderHabilidad;
 import model.personajes.Aatrox;
 import model.personajes.Azir;
@@ -27,15 +31,18 @@ public class MainMiguel {
 
 	public static void main(String[] args) {
 		int personaje, confirmar = 0, cero = 0, opciones = 0, turno = 0, opcionMin = 1, opcionMax = 3,
-				saltoPantalla = 0, opcionAtaqueHabil = 3;
+				saltoPantalla = 0, opcionAtaqueHabil = 3, combateEsbirro = 0;
+		Random random = new Random(System.nanoTime());
 		DatosPersonajes dp = new DatosPersonajes();
 		DatosLoot dl = new DatosLoot();
 		DatosEnemigos de = new DatosEnemigos();
 		LootPoderHabilidad lph = new LootPoderHabilidad();
 		LootAtaque lAtaque = new LootAtaque();
+		LootDefensa lDefensa = new LootDefensa();
 		Aatrox aatrox;
 		Azir azir;
 		EnemigoPrincipal boss;
+		EnemigoAleatorio esbirro;
 
 		ImpresionMenu.imprimirTitulo();
 
@@ -137,10 +144,10 @@ public class MainMiguel {
 				ImpresionLoot1.imprimirCofre();
 				ImpresionMensajes.AceptarLoot();
 				opciones = Leer.datoInt();
-				lAtaque = ControllerLoot.lootAtaque();
-				ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
-				aatrox.setAtaque(aatrox.getAtaque() + lAtaque.getAtaque());
-				aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lAtaque.getVida());
+				lDefensa = ControllerLoot.asignarLootDefensa(); // Asigno un loot de habilidad aleatorio
+				ImpresionMensajes.imprimirLootDefensa(lDefensa, dl);
+				aatrox.setDefensa(aatrox.getDefensa() + lDefensa.getDefensa());
+				aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lDefensa.getVida());
 				aatrox.setVida(aatrox.getVidaMaxima());
 				ImpresionMensajes.saltarPantalla();
 				do {
@@ -155,6 +162,40 @@ public class MainMiguel {
 				do {
 					saltoPantalla = Leer.datoInt();
 
+				} while (saltoPantalla != 1);
+				combateEsbirro = random.nextInt(1 - 0 + 1) + 1;
+				if (combateEsbirro == 2) {
+					esbirro = de.getListaEnemigosAleatorio()[1];
+					MensajesHistoriaAatrox.impresion1Esbirro1();
+					ImpresionesEnemigos.imprimirEsbirros();
+					MensajesHistoriaAatrox.impresion2Esbirro1();
+					opciones = Leer.datoInt();
+					do {
+						ImpresionCombate1.imprimirAatroxyEsbirro();
+						turno++;
+						ImpresionMensajes.ImprimirTurnos(turno);
+						ImpresionMensajes.OpcionesCombateAatroxAleatorio(aatrox, esbirro);
+						opciones = Leer.datoInt();
+						while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no
+																				// este entre
+							// 1 y 3
+
+							ImpresionMensajes.ErrorOpciones();
+
+							opciones = Leer.datoInt();
+						}
+						while (opciones == opcionAtaqueHabil
+								&& aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+							ImpresionMensajes.ErrorRecursos();
+							opciones = Leer.datoInt();
+						}
+						ControllerCombateAatrox.combateAatroxEnemigoAleatorio(aatrox, esbirro, opciones);
+
+					} while (aatrox.getVida() > 0.0 && esbirro.getVida() > 0.0);
+				}
+				ImpresionMensajes.saltarPantalla();
+				do {
+					saltoPantalla = Leer.datoInt();
 				} while (saltoPantalla != 1);
 				MensajesHistoriaAatrox.impresion1Pantalla6();
 				ImpresionesTitulo.TituloShyvana();
@@ -261,10 +302,10 @@ public class MainMiguel {
 						ImpresionLoot1.imprimirCofre();
 						ImpresionMensajes.AceptarLoot();
 						opciones = Leer.datoInt();
-						lAtaque = ControllerLoot.lootAtaque();
-						ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
-						aatrox.setAtaque(aatrox.getAtaque() + lAtaque.getAtaque());
-						aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lAtaque.getVida());
+						lDefensa = ControllerLoot.asignarLootDefensa(); // Asigno un loot de habilidad aleatorio
+						ImpresionMensajes.imprimirLootDefensa(lDefensa, dl);
+						aatrox.setDefensa(aatrox.getDefensa() + lDefensa.getDefensa());
+						aatrox.setVidaMaxima(aatrox.getVidaMaxima() + lDefensa.getVida());
 						aatrox.setVida(aatrox.getVidaMaxima());
 						ImpresionMensajes.saltarPantalla();
 						do {

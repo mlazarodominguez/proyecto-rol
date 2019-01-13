@@ -74,6 +74,22 @@ public class MensajesHistoriaAatrox {
 
 	}
 
+	// COMBATE ESBIRRO
+	public static void impresion1Esbirro1() {
+		System.out.println("Algo venía corriendo hacía Aatrox... ");
+	}
+	// imagen esbirro
+
+	public static void impresion2Esbirro1() {
+		System.out.println("Esbirro: Vengo jigao churra dame 5 minutos que respire. "
+				+ "\n Pulsa cualquier número para luchar contra el esbirro.");
+
+	}
+
+	public static void impresionLootEsbirro() {
+		System.out.println("Se le ha caído algo al esbirro al morir.\n " + "Pulsa cualquier número para recogerlo.");
+	}
+
 	public static void impresion1Pantalla6() {
 		System.out.println(
 				"En mitad del largo camino emprendido por Aatrox para conseguir liberarse de la espada oscura, para a descansar en medio del desierto. \n"
@@ -177,47 +193,53 @@ public class MensajesHistoriaAatrox {
 				"Mordekaiser:¿Cuantas veces voy a tener que repetir que hecheis la llave coño?... No es tan complicado "
 						+ "\n*Pulsa cualquier número para luchar contra Mordekaiser y vengar a los tuyos\n");
 	}
-	
+
 	public static void impresion1Pantalla15() {
-		System.out.println("Derrotado Mordekaiser solo que quedaba un único rey... Pero no sería en Valoran donde lo encontraría. \n "
-				+ "Tendría que viajar hacía el único lugar que no había pisado todavía. Ionía");
+		System.out.println(
+				"Derrotado Mordekaiser solo que quedaba un único rey... Pero no sería en Valoran donde lo encontraría. \n "
+						+ "Tendría que viajar hacía el único lugar que no había pisado todavía. Ionía");
 	}
-	
+
 	// impresion barco
-	
+
 	public static void impresion2Pantalla15() {
 		System.out.println("Tierra a la vista grito el capitánd el barco...");
 	}
-	
+
 	public static void impresion1Pantalla16() {
 		System.out.println("Ionia aparecía delante de Aatrox, al fondo se veía una enorme montaña.\n "
 				+ "Uno de los viajeros estaba contando la historia de Ionia");
 	}
 	// titulo y mapa de Ionia
-	
+
 	public static void impresion2Pantalla16() {
-		System.out.println("Viajero: Cuenta la leyenda que en lo alto de la montaña se encuentra un castillo abandonado, pero ultimamente se ha visto mucho movimiento  por esa zona,\n "
-				+ "y un ejercito rodea el la montaña");
-		
+		System.out.println(
+				"Viajero: Cuenta la leyenda que en lo alto de la montaña se encuentra un castillo abandonado, pero ultimamente se ha visto mucho movimiento  por esa zona,\n "
+						+ "y un ejercito rodea el la montaña");
+
 	}
-	
+
 	public static void impresion1Pantalla17() {
-		System.out.println("Aatrox empredió su camino hacia la montaña, en medio del bosque de noche Aatrox buscaba una cueva para poder pasar la noche");
+		System.out.println(
+				"Aatrox empredió su camino hacia la montaña, en medio del bosque de noche Aatrox buscaba una cueva para poder pasar la noche");
 	}
 	// imprimir bosque
-	
+
 	public static void impresion2Pantalla17() {
-		System.out.println("Aatrox continuaba explorando la cueva para asegurarse que estaba vacía pero seguía y seguía caminando y no encontraba fin.. de pronto un ruido como una estampida se escucha al fondo de la cueva, ¿Qué será?");
-		
+		System.out.println(
+				"Aatrox continuaba explorando la cueva para asegurarse que estaba vacía pero seguía y seguía caminando y no encontraba fin.. de pronto un ruido como una estampida se escucha al fondo de la cueva, ¿Qué será?");
+
 	}
-	
+
 	public static void impresion1Pantalla18() {
 		System.out.println("Desconocido: ¡¡LLEGÓ EL LECHEROOOOOOOOOOOOO!!!");
 	}
-	//IMPRIMIR TItulo y imagen de leeroy jenkins
+
+	// IMPRIMIR TItulo y imagen de leeroy jenkins
 	public static void impresion2Pantalla18() {
-		System.out.println("Leeroy Jenkins: Qué fácil ha sido traerte hasta aquí, tan largo viaje para morir en esta cueva.\n"
-				+ "Ha llegado tu hora."
-				+ "\n*Pulsa cualquier número para luchar contra Leero Jenkins y acabar con esto ya de una vez por todas\n");
+		System.out.println(
+				"Leeroy Jenkins: Qué fácil ha sido traerte hasta aquí, tan largo viaje para morir en esta cueva.\n"
+						+ "Ha llegado tu hora."
+						+ "\n*Pulsa cualquier número para luchar contra Leero Jenkins y acabar con esto ya de una vez por todas\n");
 	}
 }
