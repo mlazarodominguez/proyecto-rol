@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Random;
 
 import controller.combate.ControllerCombateAatrox;
@@ -29,7 +31,7 @@ import vista.MensajeHistoriaAzir;
 import vista.MensajesHistoriaAatrox;
 import vista.MensajesPrueba;
 
-public class MainDaniel {
+public class Ppal {
 
 	public static void main(String[] args) {
 
@@ -922,3 +924,4 @@ public class MainDaniel {
 	}
 
 }
+

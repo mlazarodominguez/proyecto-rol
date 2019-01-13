@@ -3,6 +3,14 @@ package controller.enemigos;
 import model.enemigos.EnemigoPrincipal;
 
 public class ControllerEnemigoPrincipal {
+	
+	public static double ataqueBasicoVsAzir(EnemigoPrincipal boss) {
+		double ataque;
+
+		ataque = boss.getAtaque();
+
+		return ataque;
+	}
 
 	public static double ataqueBasico(EnemigoPrincipal boss) {
 		double ataque;

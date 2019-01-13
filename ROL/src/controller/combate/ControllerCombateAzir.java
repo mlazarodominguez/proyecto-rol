@@ -67,8 +67,8 @@ public class ControllerCombateAzir {
 						boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
 						ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
 					} else {
-						azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
-						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
+						azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasicoVsAzir(boss));
+						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasicoVsAzir(boss));
 					}
 					break;
 				case 2:
@@ -95,8 +95,8 @@ public class ControllerCombateAzir {
 					boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
 					ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
 				} else {
-					azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
-					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
+					azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasicoVsAzir(boss));
+					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasicoVsAzir(boss));
 				}
 				break;
 			case 2:

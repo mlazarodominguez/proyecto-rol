@@ -26,6 +26,7 @@ public class ImpresionMensajes {
 	public static void mensajeAtaqueJefe(double ataque) {
 		System.out.println("Te han atacado: -" + ataque);
 	}
+	
 
 	public static void mensajeSanarPersonaje(double sanacion) {
 		System.out.println("Tu personaje se ha sanado :" + sanacion);
