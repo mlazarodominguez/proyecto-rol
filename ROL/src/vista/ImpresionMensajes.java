@@ -26,13 +26,19 @@ public class ImpresionMensajes {
 		System.out.println("Te han atacado: -" + ataque);
 	}
 
+	public static void mensajeSanarPersonaje(double sanacion) {
+		System.out.println("Tu personaje se ha sanado :" + sanacion);
+	}
+
 	public static void mensajeProtegerPersonaje(double ataque) {
 		System.out.println("Tu personaje se ha protegido: -" + ataque);
-		System.out.println("Tu personaje se ha sanado : +15");
+
 	}
+
 	public static void restaurarRecursos() {
 		System.out.println("Recursos restaurados");
 	}
+
 	public static void limiteVida() {
 		System.out.println("Estas a full de vida no puedes sanarte. Elige otra opción:");
 	}
@@ -85,6 +91,7 @@ public class ImpresionMensajes {
 		System.out.println("*Pulsa cualquier número para luchar");
 		System.out.println("*Pulsa 0 para intentar huir");
 	}
+
 	public static void OpcionesCombateAatroxAleatorio(Aatrox aatrox, EnemigoAleatorio boss) {
 		System.out.println("Aatrox ♥ " + aatrox.getVida() + "\t\t Boss ♥ " + boss.getVida());
 		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + aatrox.getAtaque() + ")");
@@ -102,15 +109,19 @@ public class ImpresionMensajes {
 	}
 
 	public static void OpcionesCombateAzir(Azir azir, EnemigoPrincipal boss) {
-		System.out.println(
-				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"+ boss.getNombre() +" ♥ " + boss.getVida());
+		System.out.println("Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"
+				+ boss.getNombre() + " ♥ " + boss.getVida());
 		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
-		System.out.println("*Pulsa 2 para protegerte del ataque rival, sanarte (Sanación: " + (ControllerAzir.restaurarVida(azir) - azir.getVida()) + ") y resturar recursos(" + (ControllerAzir.restaurarRecursos(azir) - azir.getRecursos())+")" );
-		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad() + ", gastas 100 recursos)"  );
+		System.out.println("*Pulsa 2 para protegerte del ataque rival, sanarte (Sanación: "
+				+ (ControllerAzir.restaurarVida(azir) - azir.getVida()) + ") y resturar recursos("
+				+ (ControllerAzir.restaurarRecursos(azir) - azir.getRecursos()) + ")");
+		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad()
+				+ ", gastas 100 recursos)");
 	}
+
 	public static void OpcionesCombateAzirAleatorio(Azir azir, EnemigoAleatorio boss) {
-		System.out.println(
-				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"+ boss.getNombre() +" ♥ " + boss.getVida());
+		System.out.println("Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"
+				+ boss.getNombre() + " ♥ " + boss.getVida());
 		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
 		System.out.println("*Pulsa 2 para protgerte del ataque rival");
 		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad() + ")\n");
@@ -192,28 +203,28 @@ public class ImpresionMensajes {
 			System.out.println("Ataque : " + lph.getAtaque() + " ↑" + "\n" + "Vida : " + lph.getVida() + " ↑");
 		}
 	}
+
 	public static void imprimirLootDefensa(LootDefensa lDefensa, DatosLoot dl) {
 		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[0].getNombre())) {
 			ImpresionLoot1.imprimirpresagio();
 			System.out.println("\nObjeto común : " + lDefensa.getNombre());
-			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
-					+ lDefensa.getVida() + " ↑");
+			System.out.println(
+					"Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : " + lDefensa.getVida() + " ↑");
 		}
 		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[1].getNombre())) {
 			ImpresionLoot1.imprimirCalibrador();
 			System.out.println("\nObjeto Épico : " + lDefensa.getNombre());
-			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
-					+ lDefensa.getVida() + " ↑");
+			System.out.println(
+					"Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : " + lDefensa.getVida() + " ↑");
 		}
 		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[2].getNombre())) {
 			ImpresionesTitulo.Legendario();
 			ImpresionLoot1.imprimirShurelya();
 			System.out.println("\nLEGENDARIOO !!! : " + lDefensa.getNombre());
-			System.out.println("Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : "
-					+ lDefensa.getVida() + " ↑");
+			System.out.println(
+					"Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : " + lDefensa.getVida() + " ↑");
 		}
 	}
-	
 
 	public static void AceptarLoot() {
 		System.out.println("Le has pateado el culo a ese jefe. Pulsa cualquier número para reclamar tu recompensa.");
@@ -223,17 +234,21 @@ public class ImpresionMensajes {
 		System.out.println("Nuevos Recursos : " + azir.getRecursos());
 		System.out.println("Nuevo poder de habilidad : " + azir.getPoderHabilidad());
 	}
+
 	public static void nuevasEstadisticasAzirLootAtaque(Azir azir) {
 		System.out.println("Nuevo Ataque : " + azir.getAtaque());
 		System.out.println("Nueva Vida Máxima : " + azir.getVida());
 	}
+
 	public static void nuevasEstadisticasAzirLootDefensa(Azir azir) {
 		System.out.println("Nueva Defensa : " + azir.getDefensa());
 		System.out.println("Nueva Vida Máxima : " + azir.getVida());
 	}
+
 	public static void traicionShyvana() {
 		System.out.println("\nShyvana te ha traicionado. Has sido destruido\n");
 	}
+
 	public static void derrotaVsEsbirro() {
 		System.out.println("Has perdido contra un esbirro sigue tu historia y olvida esto para siempre");
 	}
