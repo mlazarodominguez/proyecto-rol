@@ -170,7 +170,9 @@ public class MainMiguel {
 					ImpresionesEnemigos.imprimirEsbirros();
 					MensajesHistoriaAatrox.impresion2Esbirro1();
 					opciones = Leer.datoInt();
+					turno = 0;
 					do {
+
 						ImpresionCombate1.imprimirAatroxyEsbirro();
 						turno++;
 						ImpresionMensajes.ImprimirTurnos(turno);
@@ -199,6 +201,7 @@ public class MainMiguel {
 					}
 
 					ImpresionMensajes.saltarPantalla();
+					aatrox.setVida(aatrox.getVidaMaxima());
 				}
 
 				do {
@@ -209,7 +212,9 @@ public class MainMiguel {
 				ImpresionesEnemigos.imprimirShyvana();
 				MensajesHistoriaAatrox.impresion2Pantalla6();
 				opciones = Leer.datoInt();
+				turno = 0;
 				do {
+
 					boss = de.getListaEnemigosPpal()[1];
 					ImpresionCombate1.imprimirAatroxyShyvana();
 					turno++;
@@ -261,6 +266,46 @@ public class MainMiguel {
 					do {
 						saltoPantalla = Leer.datoInt();
 					} while (saltoPantalla != 1);
+					combateEsbirro = random.nextInt(1 - 0 + 1) + 1;
+					if (combateEsbirro == 2) {
+						esbirro = de.getListaEnemigosAleatorio()[2];
+						MensajesHistoriaAatrox.impresion1Esbirro1();
+						ImpresionesEnemigos.imprimirEsbirros();
+						MensajesHistoriaAatrox.impresion2Esbirro1();
+						opciones = Leer.datoInt();
+						do {
+							turno = 0;
+							ImpresionCombate1.imprimirAatroxyEsbirro();
+							turno++;
+							ImpresionMensajes.ImprimirTurnos(turno);
+							ImpresionMensajes.OpcionesCombateAatroxAleatorio(aatrox, esbirro);
+							opciones = Leer.datoInt();
+							while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que
+																					// no
+																					// este entre
+								// 1 y 3
+
+								ImpresionMensajes.ErrorOpciones();
+
+								opciones = Leer.datoInt();
+							}
+							while (opciones == opcionAtaqueHabil
+									&& aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+								ImpresionMensajes.ErrorRecursos();
+								opciones = Leer.datoInt();
+							}
+							ControllerCombateAatrox.combateAatroxEnemigoAleatorio(aatrox, esbirro, opciones);
+
+						} while (aatrox.getVida() > 0.0 && esbirro.getVida() > 0.0);
+						if (aatrox.getVida() > 0.0 && esbirro.getVida() < 0.0) {
+							ImpresionMensajes.victoriaVsEsbirro();
+						} else {
+							ImpresionMensajes.derrotaVsEsbirro();
+						}
+
+						ImpresionMensajes.saltarPantalla();
+						aatrox.setVida(aatrox.getVidaMaxima());
+					}
 					MensajesHistoriaAatrox.impresion1Pantalla9();
 					ImpresionesEscenarios.ImprimirBosque();
 					MensajesHistoriaAatrox.impresion2Pantalla9();
@@ -280,7 +325,9 @@ public class MainMiguel {
 					ImpresionesEnemigos.imprimirMalzahar();
 					MensajesHistoriaAatrox.impresion2Pantalla11();
 					opciones = Leer.datoInt();
+					turno = 0;
 					do {
+
 						boss = de.getListaEnemigosPpal()[2];
 						ImpresionCombate1.imprimirAatroxyMalhazar();
 						turno++;
@@ -338,7 +385,9 @@ public class MainMiguel {
 						ImpresionesEnemigos.imprimirMordekaiser();
 						MensajesHistoriaAatrox.impresion2Pantalla14();
 						opciones = Leer.datoInt();
+						turno = 0;
 						do {
+
 							boss = de.getListaEnemigosPpal()[3];
 							ImpresionCombate1.imprimirAatroxymordekaiser();
 							turno++;
@@ -393,6 +442,46 @@ public class MainMiguel {
 							do {
 								saltoPantalla = Leer.datoInt();
 							} while (saltoPantalla != 1);
+							combateEsbirro = random.nextInt(1 - 0 + 1) + 1;
+							if (combateEsbirro == 2) {
+								esbirro = de.getListaEnemigosAleatorio()[3];
+								MensajesHistoriaAatrox.impresion1Esbirro1();
+								ImpresionesEnemigos.imprimirEsbirros();
+								MensajesHistoriaAatrox.impresion2Esbirro1();
+								opciones = Leer.datoInt();
+								do {
+									turno = 0;
+									ImpresionCombate1.imprimirAatroxyEsbirro();
+									turno++;
+									ImpresionMensajes.ImprimirTurnos(turno);
+									ImpresionMensajes.OpcionesCombateAatroxAleatorio(aatrox, esbirro);
+									opciones = Leer.datoInt();
+									while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una
+																							// opcion que no
+																							// este entre
+										// 1 y 3
+
+										ImpresionMensajes.ErrorOpciones();
+
+										opciones = Leer.datoInt();
+									}
+									while (opciones == opcionAtaqueHabil
+											&& aatrox.getVida() < ControllerAatrox.gastoRecursos(aatrox)) {
+										ImpresionMensajes.ErrorRecursos();
+										opciones = Leer.datoInt();
+									}
+									ControllerCombateAatrox.combateAatroxEnemigoAleatorio(aatrox, esbirro, opciones);
+
+								} while (aatrox.getVida() > 0.0 && esbirro.getVida() > 0.0);
+								if (aatrox.getVida() > 0.0 && esbirro.getVida() < 0.0) {
+									ImpresionMensajes.victoriaVsEsbirro();
+								} else {
+									ImpresionMensajes.derrotaVsEsbirro();
+								}
+
+								ImpresionMensajes.saltarPantalla();
+								aatrox.setVida(aatrox.getVidaMaxima());
+							}
 							MensajesHistoriaAatrox.impresion1Pantalla17();
 							ImpresionesEscenarios.ImprimirBosque();
 							MensajesHistoriaAatrox.impresion2Pantalla17();
@@ -405,7 +494,9 @@ public class MainMiguel {
 							ImpresionesEnemigos.imprimirLeeroyJenkins();
 							MensajesHistoriaAatrox.impresion2Pantalla18();
 							opciones = Leer.datoInt();
+							turno = 0;
 							do {
+
 								boss = de.getListaEnemigosPpal()[4];
 								ImpresionCombate1.imprimirAatroxyLeeroy();
 								turno++;

@@ -203,7 +203,7 @@ public class MensajesHistoriaAatrox {
 	// impresion barco
 
 	public static void impresion2Pantalla15() {
-		System.out.println("Tierra a la vista grito el capitánd el barco...");
+		System.out.println("Tierra a la vista grito el capitán el barco...");
 	}
 
 	public static void impresion1Pantalla16() {
