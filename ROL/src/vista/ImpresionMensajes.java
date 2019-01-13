@@ -1,5 +1,6 @@
 package vista;
 
+import controller.personajes.ControllerAatrox;
 import controller.personajes.ControllerAzir;
 import datos.DatosLoot;
 import model.enemigos.EnemigoAleatorio;
@@ -94,10 +95,10 @@ public class ImpresionMensajes {
 
 	public static void OpcionesCombateAatroxAleatorio(Aatrox aatrox, EnemigoAleatorio boss) {
 		System.out.println("Aatrox ♥ " + aatrox.getVida() + "\t\t Boss ♥ " + boss.getVida());
-		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + aatrox.getAtaque() + ")");
+		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + ControllerAatrox.ataqueBasico(aatrox) + ")");
 		System.out.println("*Pulsa 2 para protgerte del ataque rival");
 		System.out
-				.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + aatrox.getPoderHabilidad() + ")\n");
+				.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + ControllerAatrox.ataqueBasico(aatrox) + ")\n");
 	}
 
 	public static void OpcionesCombateAatrox(Aatrox aatrox, EnemigoPrincipal boss) {
@@ -253,4 +254,7 @@ public class ImpresionMensajes {
 		System.out.println("Has perdido contra un esbirro sigue tu historia y olvida esto para siempre");
 	}
 
+	public static void victoriaVsEsbirro() {
+		System.out.println("Has ganado al esbirro, bien hecho continúa tu historia.");
+	}
 }

@@ -8,7 +8,7 @@ public class ControllerAatrox {
 
 	public static double ataqueBasico(Aatrox aatrox) {
 		double ataque;
-		ataque = aatrox.getAtaque() * 2.3;
+		ataque = aatrox.getAtaque() * 0.7;
 
 		return ataque;
 
@@ -16,13 +16,13 @@ public class ControllerAatrox {
 
 	public static double ataqueHabilidad(Aatrox aatrox) {
 		double habilidad;
-		habilidad = aatrox.getPoderHabilidad() * 2.3;
+		habilidad = aatrox.getPoderHabilidad() * 4.5;
 		return habilidad;
 	}
 
 	public static double gastoRecursos(Aatrox aatrox) {
 		double recursos;
-		recursos = 5;
+		recursos = 25;
 		return recursos;
 	}
 

@@ -37,6 +37,7 @@ public class ControllerCombateAatrox {
 				if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
 
 					aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+					ImpresionMensajes.mensajeSanarPersonaje(ControllerAatrox.restaurarVida(aatrox));
 				}
 				break;
 			// Ataque habilidad
@@ -111,6 +112,7 @@ public class ControllerCombateAatrox {
 					if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
 
 						aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+						ImpresionMensajes.mensajeSanarPersonaje(ControllerAatrox.restaurarVida(aatrox));
 					}
 					break;
 				// Ataque habilidad
@@ -154,6 +156,7 @@ public class ControllerCombateAatrox {
 				if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
 
 					aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+					ImpresionMensajes.mensajeSanarPersonaje(ControllerAatrox.restaurarVida(aatrox));
 				}
 				break;
 			// Ataque habilidad
@@ -229,6 +232,7 @@ public class ControllerCombateAatrox {
 					if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
 
 						aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+						ImpresionMensajes.mensajeSanarPersonaje(ControllerAatrox.restaurarVida(aatrox));
 					}
 					// Ataque habilidad
 				case 3:
