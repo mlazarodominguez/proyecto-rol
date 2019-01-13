@@ -12,6 +12,10 @@ public class MensajeHistoriaAzir {
 		System.out.println("\nAzir caminaba sobre los dorados adoquines del Camino del Emperador. Las inmensas estatuas de los primeros señores de Shurima —sus antepasados— lo contemplaban."
 				+"\nEl firmamento nocturno no era como Azir lo recordaba. Las estrellas y las constelaciones no estaban en su sitio. Habían pasado milenios. Ahora Shruima sólo era una ciudad de fantasmas.\n\n");
 	}
+	public static void historiaAzir2v40() {
+		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador a las puertas del catillo una oleada de energia lo golpea empujándolo, era Ornn\n" + 
+				"un semidiós de Freljord,el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos.\n");
+	}
 	
 	public static void historiaAzir2() {
 		System.out.println("\n\nMientras seguía avanzando por el Camino del Emperador a las puertas del catillo, se encontró con Neeko una cambiaformas una de las pocas supervivientes.\n"
@@ -25,12 +29,20 @@ public class MensajeHistoriaAzir {
 		System.out.println("Azir : 'No podré hacer nada contra él sino me ayudas Neeko, necesito mi magia'");
 		System.out.println("Neeko : 'Está bien Azir, solo hay una forma de hacerlo venga a nuestro pueblo en mi nombre...'");
 		System.out.println("Azir : 'NEEKOOOO ESPERA NOOOOOOO!!!!!!!!!!'");
-		System.out.println("Neeko recurrió al conjuro de magia oscuro más poderoso que existe aún sabiendo que no sobreviviría\n");
+		System.out.println("\n*Pulsa 1 para dejar que Neeko muera y recuperar tu poder");
+		System.out.println("*Pulsa 2 para salvar a Neeko y ser un humano de nivel 1");
+		
 		//Imprimir castillo
 	}
-	public static void historiaAzir2v2() {
+	public static void historiaAzir2v1v1() {
+		System.out.println("Neeko recurrió al conjuro de magia oscuro más poderoso que existe aún sabiendo que no sobreviviría");
 		System.out.println("\nAzir de nuevo poderoso pero hundido tras la muerte Neeko se dispone a entrar en el castillo pero una oleada de energia lo golpea empujándolo, era Ornn\n"
 				+ "un semidiós de Freljord,el culpable del aniquiliamiento de Shurima pero ahora Azir tenía en su mano poder vengarlos.\n");
+	}
+	public static void historiaAzir2v1v2() {
+		System.out.println("Neeko : 'No vencerás a Ornn, si no recuperas tus poderes'");
+		System.out.println("Azir : 'No infravalores al mago más legendario de Runaterra'");
+		System.out.println("Neeko : 'He guardado este objeto mucho tiempo te pertenece... Mata a todos Azir'");
 	}
 	public static void historiaAzir2v3() {
 		System.out.println("*Pulsa cualquier número para luchar contra Ornn y vengar a los tuyos\n");
@@ -120,6 +132,14 @@ public class MensajeHistoriaAzir {
 	public static void historiaAzir19() {
 		System.out.println("\n*Pulsa 1 para ver los créditos");
 		System.out.println("Pulsa 0 para acabar el juego");
+	}
+	public static void historiaAzirEvenAleat() {
+		System.out.println("Antes de llegar al puerto entras a una cueva y ves un gran hoyo en el suelo. Cuando te acercas, un enorme esbirro aparece");
+		ImpresionesEnemigos.imprimirEsbirros();
+		System.out.println("Esbirro : '¡Hola! ¿Qué tenenos aquí?'");
+		System.out.println("Azir : '¿Escondes algo en estas ruinas?'");
+		System.out.println("*Pulsa 1 para matar al esbirro y buscar su tesoro");
+		System.out.println("*Pulsa 2 para dejarlo vivir e irte sin más");
 	}
 
 }

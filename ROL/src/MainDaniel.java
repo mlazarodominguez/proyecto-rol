@@ -5,6 +5,7 @@ import crud.personajes.CrudAzir;
 import datos.DatosEnemigos;
 import datos.DatosLoot;
 import datos.DatosPersonajes;
+import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 import model.loot.LootAtaque;
 import model.loot.LootDefensa;
@@ -36,9 +37,11 @@ public class MainDaniel {
 		LootPoderHabilidad lph = new LootPoderHabilidad();
 		LootPoderHabilidad lph2 = new LootPoderHabilidad();
 		LootAtaque lAtaque = new LootAtaque();
+		LootAtaque lAtaque2 = new LootAtaque();
 		LootDefensa lDefensa = new LootDefensa();
 		Aatrox aatrox;
 		Azir azir;
+		EnemigoAleatorio bossAlea;
 		EnemigoPrincipal boss;
 
 		ImpresionMenu.imprimirTitulo();
@@ -96,14 +99,7 @@ public class MainDaniel {
 			ImpresionMensajes.saltarPantalla();
 			opciones = Leer.datoInt();
 			
-			MensajeHistoriaAzir.historiaAzir2();
-			ImpresionesTitulo.TituloNeeko();
-			ImpresionesPersonajes.imprimirNeeko();
-			ImpresionMensajes.saltarPantalla();
-			opciones = Leer.datoInt();
-			
-			MensajeHistoriaAzir.historiaAzir2v1();
-			MensajeHistoriaAzir.historiaAzir2v2();
+			MensajeHistoriaAzir.historiaAzir2v40();
 			ImpresionesEscenarios.ImprimirCastillo2();
 			MensajeHistoriaAzir.historiaAzir2v3();
 			opciones = Leer.datoInt();
@@ -156,7 +152,58 @@ public class MainDaniel {
 				ImpresionMapas.imprimirmapaGeneral();
 				ImpresionMensajes.saltarPantalla();
 				opciones = Leer.datoInt();
-				
+				//Evento aleatorio
+				MensajeHistoriaAzir.historiaAzirEvenAleat();
+				opciones = Leer.datoInt();
+				if (opciones == 1) {
+					bossAlea = de.getListaEnemigosAleatorio()[cero];
+					turno = cero;
+					do {
+						ImpresionCombate1.imprimirAziryEsbirro();
+						turno++;
+						ImpresionMensajes.ImprimirTurnos(turno);
+						ImpresionMensajes.OpcionesCombateAzirAleatorio(azir, bossAlea);
+						opciones = Leer.datoInt();
+						while (opciones < opcionMin || opciones > opcionMax) {// No permitir elegir una opcion que no este entre
+																				// 1 y 3
+							ImpresionMensajes.ErrorOpciones();
+							opciones = Leer.datoInt();
+						}
+						while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
+																							// habilidad si no tiene recursos
+							ImpresionMensajes.ErrorRecursos();
+							opciones = Leer.datoInt();
+						}
+						ControllerCombateAzir.combateAzirEnemigoAleatorio(azir, bossAlea, opciones);
+						MensajesPrueba.MostrarResultadoAzir(azir, boss);
+						
+					} while (azir.getVida() > 0.0 && bossAlea.getVida() > 0.0);
+					if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) { //Si gana contra el esbirro
+						CrudAzir.resetearVida(azir);
+						azir.setRecursos(azir.getRecursosMax());
+						ImpresionMensajes.AceptarLoot();
+						ImpresionLoot1.imprimirCofre();
+						opciones = Leer.datoInt();
+						
+						lAtaque = ControllerLoot.lootAtaque();
+						ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
+						azir.setAtaque(azir.getAtaque() + lAtaque.getAtaque());
+						azir.setVidaMaxima(azir.getVidaMaxima() + lAtaque.getVida());
+						azir.setVida(azir.getVidaMaxima());
+						ImpresionMensajes.nuevasEstadisticasAzirLootAtaque(azir);
+						ImpresionMensajes.saltarPantalla();
+						opciones = Leer.datoInt();
+						
+					}else { // Si pierde contra el esbirro
+						ImpresionMensajes.derrotaVsEsbirro();
+						CrudAzir.resetearVida(azir);
+						azir.setRecursos(azir.getRecursosMax());
+						ImpresionMensajes.saltarPantalla();
+						opciones = Leer.datoInt();
+					}
+				} else {// Si elige dejar vivo al esbirro
+
+				}
 				MensajeHistoriaAzir.historiaAzir5();
 				ImpresionesEscenarios.ImprimirBarco();
 				MensajeHistoriaAzir.historiaAzir6();
@@ -199,10 +246,13 @@ public class MainDaniel {
 						ImpresionLoot1.imprimirCofre();
 						opciones = Leer.datoInt();
 						
-						lAtaque = ControllerLoot.lootAtaque();
-						ImpresionMensajes.ImprimirLootAtaque(lAtaque, dl);
-						azir.setAtaque(azir.getAtaque() + lAtaque.getAtaque());
-						azir.setVidaMaxima(azir.getVidaMaxima() + lAtaque.getVida());
+						lAtaque2 = ControllerLoot.lootAtaque();
+						while (lAtaque2.getNombre().equals(lAtaque.getNombre())) { //Bucle para que no se repita el mismo looteo que te dio antes
+							lAtaque2 = ControllerLoot.lootAtaque();
+						}
+						ImpresionMensajes.ImprimirLootAtaque(lAtaque2, dl);
+						azir.setAtaque(azir.getAtaque() + lAtaque2.getAtaque());
+						azir.setVidaMaxima(azir.getVidaMaxima() + lAtaque2.getVida());
 						azir.setVida(azir.getVidaMaxima());
 						ImpresionMensajes.nuevasEstadisticasAzirLootAtaque(azir);
 						ImpresionMensajes.saltarPantalla();

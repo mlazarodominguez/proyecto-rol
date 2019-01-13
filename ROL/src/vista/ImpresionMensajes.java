@@ -1,6 +1,7 @@
 package vista;
 
 import datos.DatosLoot;
+import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 import model.loot.LootAtaque;
 import model.loot.LootDefensa;
@@ -76,6 +77,13 @@ public class ImpresionMensajes {
 		System.out.println("*Pulsa cualquier número para luchar");
 		System.out.println("*Pulsa 0 para intentar huir");
 	}
+	public static void OpcionesCombateAatroxAleatorio(Aatrox aatrox, EnemigoAleatorio boss) {
+		System.out.println("Aatrox ♥ " + aatrox.getVida() + "\t\t Boss ♥ " + boss.getVida());
+		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + aatrox.getAtaque() + ")");
+		System.out.println("*Pulsa 2 para protgerte del ataque rival");
+		System.out
+				.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + aatrox.getPoderHabilidad() + ")\n");
+	}
 
 	public static void OpcionesCombateAatrox(Aatrox aatrox, EnemigoPrincipal boss) {
 		System.out.println("Aatrox ♥ " + aatrox.getVida() + "\t\t Boss ♥ " + boss.getVida());
@@ -86,6 +94,13 @@ public class ImpresionMensajes {
 	}
 
 	public static void OpcionesCombateAzir(Azir azir, EnemigoPrincipal boss) {
+		System.out.println(
+				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"+ boss.getNombre() +" ♥ " + boss.getVida());
+		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
+		System.out.println("*Pulsa 2 para protgerte del ataque rival");
+		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad() + ")\n");
+	}
+	public static void OpcionesCombateAzirAleatorio(Azir azir, EnemigoAleatorio boss) {
 		System.out.println(
 				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"+ boss.getNombre() +" ♥ " + boss.getVida());
 		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
@@ -210,7 +225,9 @@ public class ImpresionMensajes {
 	}
 	public static void traicionShyvana() {
 		System.out.println("\nShyvana te ha traicionado. Has sido destruido\n");
-		
+	}
+	public static void derrotaVsEsbirro() {
+		System.out.println("Has perdido contra un esbirro sigue tu historia y olvida esto para siempre");
 	}
 
 }
