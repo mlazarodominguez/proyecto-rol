@@ -35,7 +35,7 @@ public class ControllerAzir {
 
 	}
 	public static int restaurarRecursos(Azir azir) {
-		int recursos = 50;
+		int recursos = 100;
 		return azir.getRecursos()+ recursos;
 	}
 }

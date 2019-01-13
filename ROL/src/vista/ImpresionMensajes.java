@@ -30,6 +30,12 @@ public class ImpresionMensajes {
 		System.out.println("Tu personaje se ha protegido: -" + ataque);
 		System.out.println("Tu personaje se ha sanado : +15");
 	}
+	public static void restaurarRecursos() {
+		System.out.println("Recursos restaurados");
+	}
+	public static void limiteVida() {
+		System.out.println("Estas a full de vida no puedes sanarte. Elige otra opción:");
+	}
 
 	public static void mensajeSanarJefe(double sanacion) {
 		if (sanacion == 0) {
