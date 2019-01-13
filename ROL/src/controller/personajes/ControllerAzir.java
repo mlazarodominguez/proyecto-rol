@@ -4,16 +4,21 @@ import model.enemigos.EnemigoPrincipal;
 import model.personajes.Azir;
 
 public class ControllerAzir {
+	
+	public static double restaurarVida(Azir azir) {
+		double sanacion = 15;
+		return azir.getVida() + sanacion;
+	}
 
 	public static double ataqueBasico(Azir azir) {
 		double ataque;
-		ataque = azir.getAtaque() * 2.3;
+		ataque = azir.getAtaque(); //* 2.3;
 		return ataque;
 	}
 
 	public static double ataqueHabilidad(Azir azir) {
 		double habilidad;
-		habilidad = azir.getPoderHabilidad() * 2.3;
+		habilidad = azir.getPoderHabilidad(); //* 2.3;
 		return habilidad;
 	}
 
@@ -28,5 +33,9 @@ public class ControllerAzir {
 		ataque = boss.getAtaque() - boss.getAtaque();
 		return ataque;
 
+	}
+	public static int restaurarRecursos(Azir azir) {
+		int recursos = 50;
+		return azir.getRecursos()+ recursos;
 	}
 }

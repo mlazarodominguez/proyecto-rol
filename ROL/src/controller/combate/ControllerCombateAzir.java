@@ -27,8 +27,21 @@ public class ControllerCombateAzir {
 				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAzir.ataqueBasico(azir1));
 				break;
 			case 2:
-				// Proteger
-				ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+				// Proteger, restauras vida y recursos
+				if (ControllerAzir.restaurarVida(azir1)>azir1.getVidaMaxima() ) {
+					azir1.setVida(azir1.getVidaMaxima());
+				}else {
+					azir1.setVida(ControllerAzir.restaurarVida(azir1));
+					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+				}
+				if (ControllerAzir.restaurarRecursos(azir1)>azir1.getRecursosMax()) {
+					azir1.setRecursos(azir1.getRecursosMax());
+					System.out.println("Recursos restaurados");
+				} else {
+					azir1.setRecursos(ControllerAzir.restaurarRecursos(azir1));
+					System.out.println("Recursos restaurados");
+				}
+				
 				break;
 			case 3:
 				// Ataque de habilidad
@@ -42,11 +55,15 @@ public class ControllerCombateAzir {
 			}
 			// Segundo ataca Boss
 			if (boss.getVida() > 0.0) {
+				while (boss.getVida()>=boss.getVidaMax() && opcionesBoss ==2) {
+					opcionesBoss = r1.nextInt(1 - 0 + 1) + 1;
+				}
 				switch (opcionesBoss) {
 				case 1:
 					// Ataque Básico Boss
 					if (opciones == 2) {
-
+						boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+						ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
 					} else {
 						azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
 						ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
@@ -66,11 +83,15 @@ public class ControllerCombateAzir {
 
 		case 2:
 			// Primero ataca boss
+			while (boss.getVida()>=boss.getVidaMax() && opcionesBoss ==2) {
+				opcionesBoss = r1.nextInt(1 - 0 + 1) + 1;
+			}
 			switch (opcionesBoss) {
 			case 1:
 				// Ataque Básico Boss
 				if (opciones == 2) {
-
+					boss.setVida(boss.getVida() + ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
+					ImpresionMensajes.mensajeSanarJefe(ControllerEnemigoPrincipal.sanarVida(boss.getVida(), boss));
 				} else {
 					azir1.setVida(azir1.getVida() - ControllerEnemigoPrincipal.ataqueBasico(boss));
 					ImpresionMensajes.mensajeAtaqueJefe(ControllerEnemigoPrincipal.ataqueBasico(boss));
@@ -95,7 +116,20 @@ public class ControllerCombateAzir {
 					break;
 				case 2:
 					// Proteger
-					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+					if (ControllerAzir.restaurarVida(azir1)>azir1.getVidaMaxima() ) {
+						azir1.setVida(azir1.getVidaMaxima());
+					}else {
+						azir1.setVida(ControllerAzir.restaurarVida(azir1));
+						ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+					}
+					if (ControllerAzir.restaurarRecursos(azir1)>azir1.getRecursosMax()) {
+						azir1.setRecursos(azir1.getRecursosMax());
+						System.out.println("Recursos restaurados");
+					} else {
+						azir1.setRecursos(ControllerAzir.restaurarRecursos(azir1));
+						System.out.println("Recursos restaurados");
+					}
+					
 					break;
 				case 3:
 					// Ataque de habilidad
@@ -131,7 +165,7 @@ public class ControllerCombateAzir {
 				break;
 			case 2:
 				// Proteger
-
+				
 				break;
 			case 3:
 				// Ataque de habilidad

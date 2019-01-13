@@ -30,7 +30,7 @@ public class MainDaniel {
 	public static void main(String[] args) {
 
 		int personaje, confirmar = 0, cero = 0, opciones, turno = 0, opcionMin = 1, opcionMax = 3,
-				opcionAtaqueHabil = 3, malzahar = 3, ornn = 0, shyvana = 1, mordekaiser = 4, leeroy = 2; 
+				opcionAtaqueHabil = 3,opcionProteger = 2, malzahar = 3, ornn = 0, shyvana = 1, mordekaiser = 4, leeroy = 2; 
 		DatosPersonajes dp = new DatosPersonajes();
 		DatosLoot dl = new DatosLoot();
 		DatosEnemigos de = new DatosEnemigos();
@@ -125,6 +125,10 @@ public class MainDaniel {
 				while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
 																					// habilidad si no tiene recursos
 					ImpresionMensajes.ErrorRecursos();
+					opciones = Leer.datoInt();
+				}
+				while (opciones == opcionProteger && azir.getVida()>= azir.getVidaMaxima()) {
+					System.out.println("Estas a full de vida no puedes sanarte. Elige otra opción:");
 					opciones = Leer.datoInt();
 				}
 				ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
@@ -235,6 +239,7 @@ public class MainDaniel {
 							ImpresionMensajes.ErrorRecursos();
 							opciones = Leer.datoInt();
 						}
+						
 						ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
 						MensajesPrueba.MostrarResultadoAzir(azir, boss);
 						

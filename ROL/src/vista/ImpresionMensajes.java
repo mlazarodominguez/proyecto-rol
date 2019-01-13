@@ -1,5 +1,6 @@
 package vista;
 
+import controller.personajes.ControllerAzir;
 import datos.DatosLoot;
 import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
@@ -27,11 +28,12 @@ public class ImpresionMensajes {
 
 	public static void mensajeProtegerPersonaje(double ataque) {
 		System.out.println("Tu personaje se ha protegido: -" + ataque);
+		System.out.println("Tu personaje se ha sanado : +15");
 	}
 
 	public static void mensajeSanarJefe(double sanacion) {
 		if (sanacion == 0) {
-			System.out.println("El tonto***** esta full de vida y no se ha podido sanar: " + sanacion);
+			System.out.println("El enemigo está a tope de vida y no se ha podido sanar: " + sanacion);
 		}
 		System.out.println("El enemigo se ha sanado: " + sanacion);
 	}
@@ -97,8 +99,8 @@ public class ImpresionMensajes {
 		System.out.println(
 				"Azir ♥ " + azir.getVida() + "\t Recursos ✧   " + azir.getRecursos() + "\t\t"+ boss.getNombre() +" ♥ " + boss.getVida());
 		System.out.println("\n*Pulsa 1 para atacar con un golpe básico(Daño: " + azir.getAtaque() + ")");
-		System.out.println("*Pulsa 2 para protgerte del ataque rival");
-		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad() + ")\n");
+		System.out.println("*Pulsa 2 para protegerte del ataque rival, sanarte (Sanación: " + (ControllerAzir.restaurarVida(azir) - azir.getVida()) + ") y resturar recursos(" + (ControllerAzir.restaurarRecursos(azir) - azir.getRecursos())+")" );
+		System.out.println("*Pulsa 3 para atacar con el golpe de habilidad(Daño: " + azir.getPoderHabilidad() + ", gastas 100 recursos)"  );
 	}
 	public static void OpcionesCombateAzirAleatorio(Azir azir, EnemigoAleatorio boss) {
 		System.out.println(

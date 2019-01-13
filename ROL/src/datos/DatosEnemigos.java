@@ -4,8 +4,9 @@ import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 
 public class DatosEnemigos {
-
-	private EnemigoPrincipal ornn = new EnemigoPrincipal(10, 10, 50, 50, "Ornn", 1);
+	
+	//double vida, double vidaMax, int ataque, int armadura, String nombre, int numJefe
+	private EnemigoPrincipal ornn = new EnemigoPrincipal(200, 200, 33, 50, "Ornn", 1);
 	private EnemigoPrincipal shyvana = new EnemigoPrincipal(100, 100, 50, 50, "Shyvana", 2);
 	private EnemigoPrincipal leeroy = new EnemigoPrincipal(100, 100, 10, 50, "Leeroy Jenkins", 3);
 	private EnemigoPrincipal malzahar = new EnemigoPrincipal(100, 100, 10, 50, "Malzahar", 4);
