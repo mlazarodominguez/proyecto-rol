@@ -7,10 +7,10 @@ public class DatosEnemigos {
 	
 	//double vida, double vidaMax, int ataque, int armadura, String nombre, int numJefe
 	private EnemigoPrincipal ornn = new EnemigoPrincipal(200, 200, 33, 50, "Ornn", 1);
-	private EnemigoPrincipal shyvana = new EnemigoPrincipal(100, 100, 50, 50, "Shyvana", 2);
-	private EnemigoPrincipal leeroy = new EnemigoPrincipal(100, 100, 10, 50, "Leeroy Jenkins", 3);
-	private EnemigoPrincipal malzahar = new EnemigoPrincipal(100, 100, 10, 50, "Malzahar", 4);
-	private EnemigoPrincipal mordekaiser = new EnemigoPrincipal(100, 100, 10, 50, "Mordekaiser", 5);
+	private EnemigoPrincipal shyvana = new EnemigoPrincipal(220, 220, 34, 50, "Shyvana", 2);
+	private EnemigoPrincipal leeroy = new EnemigoPrincipal(250, 250, 40, 50, "Leeroy Jenkins", 3);
+	private EnemigoPrincipal malzahar = new EnemigoPrincipal(210, 210, 35, 50, "Malzahar", 4);
+	private EnemigoPrincipal mordekaiser = new EnemigoPrincipal(240, 240, 36, 50, "Mordekaiser", 5);
 	private EnemigoAleatorio a1 = new EnemigoAleatorio(100, 100, 10, 50, "Aleatorio1", 1);
 	private EnemigoAleatorio a2 = new EnemigoAleatorio(100, 100, 10, 50, "Aleatorio2", 2);
 	private EnemigoAleatorio a3 = new EnemigoAleatorio(100, 100, 10, 50, "Aleatorio3", 3);

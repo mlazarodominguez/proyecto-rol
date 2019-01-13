@@ -28,11 +28,16 @@ public class ControllerCombateAatrox {
 			case 1:
 				boss.setVida(boss.getVida() - ControllerAatrox.ataqueBasico(aatrox));
 				ImpresionMensajes.mensajeAtaquePersonaje(ControllerAatrox.ataqueBasico(aatrox));
+
 				break;
 			// Proteger
 			case 2:
 				aatrox.setVida(aatrox.getVida() - (ControllerAatrox.proteger(boss)));
 				ImpresionMensajes.mensajeProtegerPersonaje(ControllerAatrox.proteger(boss));
+				if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
+
+					aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+				}
 				break;
 			// Ataque habilidad
 			case 3:
@@ -103,6 +108,10 @@ public class ControllerCombateAatrox {
 				case 2:
 					aatrox.setVida(aatrox.getVida() - (ControllerAatrox.proteger(boss)));
 					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAatrox.proteger(boss));
+					if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
+
+						aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+					}
 					break;
 				// Ataque habilidad
 				case 3:
@@ -141,7 +150,11 @@ public class ControllerCombateAatrox {
 				break;
 			// Proteger
 			case 2:
+				ImpresionMensajes.mensajeProtegerPersonaje(ControllerAatrox.proteger(esbirro));
+				if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
 
+					aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+				}
 				break;
 			// Ataque habilidad
 			case 3:
@@ -212,7 +225,11 @@ public class ControllerCombateAatrox {
 					break;
 				// Proteger
 				case 2:
+					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAatrox.proteger(esbirro));
+					if (aatrox.getVida() < aatrox.getVidaMaxima() - ControllerAatrox.restaurarVida(aatrox)) {
 
+						aatrox.setVida(aatrox.getVida() + ControllerAatrox.restaurarVida(aatrox));
+					}
 					// Ataque habilidad
 				case 3:
 					esbirro.setVida(esbirro.getVida() - ControllerAatrox.ataqueHabilidad(aatrox));

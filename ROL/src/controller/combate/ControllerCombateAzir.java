@@ -30,6 +30,7 @@ public class ControllerCombateAzir {
 				// Proteger, restauras vida y recursos
 				if (ControllerAzir.restaurarVida(azir1)>azir1.getVidaMaxima() ) {
 					azir1.setVida(azir1.getVidaMaxima());
+					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
 				}else {
 					azir1.setVida(ControllerAzir.restaurarVida(azir1));
 					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
@@ -118,6 +119,7 @@ public class ControllerCombateAzir {
 					// Proteger
 					if (ControllerAzir.restaurarVida(azir1)>azir1.getVidaMaxima() ) {
 						azir1.setVida(azir1.getVidaMaxima());
+						ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
 					}else {
 						azir1.setVida(ControllerAzir.restaurarVida(azir1));
 						ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));

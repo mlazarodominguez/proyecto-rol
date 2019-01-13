@@ -1,5 +1,6 @@
 package controller.personajes;
 
+import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 import model.personajes.Aatrox;
 
@@ -28,6 +29,17 @@ public class ControllerAatrox {
 	public static double proteger(EnemigoPrincipal boss) {
 		double ataque;
 		ataque = boss.getAtaque() - boss.getAtaque();
+		return ataque;
+
+	}
+	
+	public static double restaurarVida(Aatrox aatrox) {
+		double sanacion =15;
+		return sanacion;
+	}
+	public static double proteger(EnemigoAleatorio esbirro) {
+		double ataque;
+		ataque = esbirro.getAtaque() - esbirro.getAtaque();
 		return ataque;
 
 	}

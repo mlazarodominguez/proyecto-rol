@@ -128,7 +128,7 @@ public class MainDaniel {
 					opciones = Leer.datoInt();
 				}
 				while (opciones == opcionProteger && azir.getVida()>= azir.getVidaMaxima()) {
-					System.out.println("Estas a full de vida no puedes sanarte. Elige otra opción:");
+					ImpresionMensajes.limiteVida();
 					opciones = Leer.datoInt();
 				}
 				ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
@@ -239,7 +239,10 @@ public class MainDaniel {
 							ImpresionMensajes.ErrorRecursos();
 							opciones = Leer.datoInt();
 						}
-						
+						while (opciones == opcionProteger && azir.getVida()>= azir.getVidaMaxima()) {
+							ImpresionMensajes.limiteVida();
+							opciones = Leer.datoInt();
+						}
 						ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
 						MensajesPrueba.MostrarResultadoAzir(azir, boss);
 						
@@ -298,6 +301,10 @@ public class MainDaniel {
 								ImpresionMensajes.ErrorRecursos();
 								opciones = Leer.datoInt();
 							}
+							while (opciones == opcionProteger && azir.getVida()>= azir.getVidaMaxima()) {
+								ImpresionMensajes.limiteVida();
+								opciones = Leer.datoInt();
+							}
 							ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
 							MensajesPrueba.MostrarResultadoAzir(azir, boss);
 							
@@ -341,6 +348,10 @@ public class MainDaniel {
 								while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
 																									// habilidad si no tiene recursos
 									ImpresionMensajes.ErrorRecursos();
+									opciones = Leer.datoInt();
+								}
+								while (opciones == opcionProteger && azir.getVida()>= azir.getVidaMaxima()) {
+									ImpresionMensajes.limiteVida();
 									opciones = Leer.datoInt();
 								}
 								ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
@@ -402,6 +413,10 @@ public class MainDaniel {
 									while (opciones == opcionAtaqueHabil && azir.getRecursos() <= 0) { // No permitir hacer ataque de
 																										// habilidad si no tiene recursos
 										ImpresionMensajes.ErrorRecursos();
+										opciones = Leer.datoInt();
+									}
+									while (opciones == opcionProteger && azir.getVida()>= azir.getVidaMaxima()) {
+										ImpresionMensajes.limiteVida();
 										opciones = Leer.datoInt();
 									}
 									ControllerCombateAzir.combateAzirBoss(azir, boss, opciones);
