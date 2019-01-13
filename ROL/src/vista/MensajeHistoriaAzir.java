@@ -57,7 +57,7 @@ public class MensajeHistoriaAzir {
 		System.out.println("*Pulsa cualquier número para comenzar a pelear");
 	}
 	public static void historiaAzir4() {
-		System.out.println("\nAzir orgulloso por su victoria y aliviado por vengar la vengar la muerte de su pueblo, pone rumbo a un nuevo objetivo conquistar las tierras de Runaterra.\n");
+		System.out.println("\nAzir orgulloso por su victoria y aliviado por vengar la muerte de su pueblo, pone rumbo a un nuevo objetivo conquistar las tierras de Runaterra.\n");
 		
 	}
 	public static void historiaAzir5() {

@@ -5,16 +5,18 @@ import model.loot.LootDefensa;
 import model.loot.LootPoderHabilidad;
 
 public class DatosLoot {
-
-	private LootAtaque baileMuerte = new LootAtaque(15, 35, "Baile de la muerte");
-	private LootAtaque sanguinaria = new LootAtaque(12, 45, "Sanguinaria");
-	private LootAtaque trinidad = new LootAtaque(20, 40, "Fuerza de la Trinidad");
-	private LootDefensa randuin = new LootDefensa(36, 80, "Presagio de Randuin");
-	private LootDefensa sterak = new LootDefensa(36, 45, "Calibrador de Sterak");
-	private LootDefensa shurelya = new LootDefensa(45, 50, "Ensueño de Shurelya");
-	private LootPoderHabilidad liandry = new LootPoderHabilidad(85, 130, "Tormento de Liandry");
-	private LootPoderHabilidad tenaza = new LootPoderHabilidad(60, 100, "Tenaza de la muerte ígnea");
-	private LootPoderHabilidad rabadon = new LootPoderHabilidad(120, 60, "Sombrero mortal de Rabadon");
+	//int vida, int ataque, String nombre
+	private LootAtaque baileMuerte = new LootAtaque(5, 10, "Baile de la muerte");
+	private LootAtaque sanguinaria = new LootAtaque(10, 15, "Sanguinaria");
+	private LootAtaque trinidad = new LootAtaque(15, 20, "Fuerza de la Trinidad");
+	//int defensa, int vida, String nombre
+	private LootDefensa randuin = new LootDefensa(36, 10, "Presagio de Randuin");
+	private LootDefensa sterak = new LootDefensa(36, 20, "Calibrador de Sterak");
+	private LootDefensa shurelya = new LootDefensa(45, 30, "Ensueño de Shurelya");
+	//int poderHabilidad, int recursos, String nombre
+	private LootPoderHabilidad liandry = new LootPoderHabilidad(10, 100, "Tormento de Liandry");
+	private LootPoderHabilidad tenaza = new LootPoderHabilidad(15, 100, "Tenaza de la muerte ígnea");
+	private LootPoderHabilidad rabadon = new LootPoderHabilidad(20, 100, "Sombrero mortal de Rabadon");
 	private LootAtaque listaLootAtaque[] = { baileMuerte, sanguinaria, trinidad };
 	private LootDefensa listaLootDefensa[] = { randuin, sterak, shurelya };
 	private LootPoderHabilidad listaLootPoderHabilidad[] = { liandry, tenaza, rabadon };

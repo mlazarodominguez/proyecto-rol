@@ -179,7 +179,7 @@ public class MainDaniel {
 							opciones = Leer.datoInt();
 						}
 						ControllerCombateAzir.combateAzirEnemigoAleatorio(azir, bossAlea, opciones);
-						MensajesPrueba.MostrarResultadoAzir(azir, boss);
+						MensajesPrueba.MostrarResultadoAzirVsAleatorio(azir, bossAlea);
 						
 					} while (azir.getVida() > 0.0 && bossAlea.getVida() > 0.0);
 					if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) { //Si gana contra el esbirro
