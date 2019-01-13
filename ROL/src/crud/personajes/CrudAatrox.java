@@ -2,7 +2,7 @@ package crud.personajes;
 
 import model.personajes.Aatrox;
 
-//TODO CAMBIAR LOS ATRIBUTOS DE NOMBRE A EL NOMBRE COMPLETO DEL PERSONAJE
+
 
 public class CrudAatrox {
 

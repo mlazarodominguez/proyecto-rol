@@ -63,7 +63,7 @@ public class ImpresionMensajes {
 	public static void MostrarResultadoAatrox(Aatrox aatrox, EnemigoPrincipal boss) {
 		if (boss.getVida() <= 0 && aatrox.getVida() > 0) {
 			System.out.println("\nBoss ♥ " + boss.getVida() + "\t\t Aatrox♥ " + aatrox.getVida());
-			ImpresionesTitulo.TituloGanador();
+			ImpresionesTitulo.tituloGanador();
 		}
 		if (boss.getVida() > 0 && aatrox.getVida() <= 0) {
 			System.out.println("\nBoss ♥ " + boss.getVida() + "\t\t Aatrox ♥ " + aatrox.getVida());
@@ -179,7 +179,7 @@ public class ImpresionMensajes {
 					+ lph.getRecursos() + " ↑");
 		}
 		if (lph.getNombre().equals(dl.getListaLootPoderHabilidad()[2].getNombre())) {
-			ImpresionesTitulo.Legendario();
+			ImpresionesTitulo.legendario();
 			ImpresionLoot1.imprimirRabadon();
 			System.out.println("\nLEGENDARIOO !!! : " + lph.getNombre());
 			System.out.println("Poder de habilidad : " + lph.getPoderHabilidad() + " ↑" + "\n" + "Rescursos : "
@@ -199,7 +199,7 @@ public class ImpresionMensajes {
 			System.out.println("Ataque : " + lph.getAtaque() + " ↑" + "\n" + "Vida : " + lph.getVida() + " ↑");
 		}
 		if (lph.getNombre().equals(dl.getListaLootAtaque()[2].getNombre())) {
-			ImpresionesTitulo.Legendario();
+			ImpresionesTitulo.legendario();
 			ImpresionLoot1.imprimirTrinidad();
 			System.out.println("\nLEGENDARIOO !!! : " + lph.getNombre());
 			System.out.println("Ataque : " + lph.getAtaque() + " ↑" + "\n" + "Vida : " + lph.getVida() + " ↑");
@@ -220,7 +220,7 @@ public class ImpresionMensajes {
 					"Defensa : " + lDefensa.getDefensa() + " ↑" + "\n" + "Vida : " + lDefensa.getVida() + " ↑");
 		}
 		if (lDefensa.getNombre().equals(dl.getListaLootDefensa()[2].getNombre())) {
-			ImpresionesTitulo.Legendario();
+			ImpresionesTitulo.legendario();
 			ImpresionLoot1.imprimirShurelya();
 			System.out.println("\nLEGENDARIOO !!! : " + lDefensa.getNombre());
 			System.out.println(

@@ -61,28 +61,28 @@ public class Ppal {
 			personaje = Leer.datoInt();
 			switch (personaje) {
 			case 1:// Aatrox
-				ImpresionesTitulo.TituloAatrox();
+				ImpresionesTitulo.tituloAatrox();
 				ImpresionesPersonajes.imprimirAatrox();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
 
 				break;
 			case 2:// Azir
-				ImpresionesTitulo.TituloAzir();
+				ImpresionesTitulo.tituloAzir();
 				ImpresionesPersonajes.imprimirAzir();
 				MensajeHistoriaAzir.descripcionAzir();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
 				break;
 			case 3:// Kled
-				ImpresionesTitulo.TituloKled();
+				ImpresionesTitulo.tituloKled();
 				ImpresionesPersonajes.imprimirKled();
 				ImpresionMensajes.DescripcionKled();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
 				break;
 			case 4:// Neeko
-				ImpresionesTitulo.TituloNeeko();
+				ImpresionesTitulo.tituloNeeko();
 				ImpresionesPersonajes.imprimirNeeko();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
@@ -99,14 +99,14 @@ public class Ppal {
 			aatrox = dp.getAatrox();
 			boss = de.getListaEnemigosPpal()[0];
 			MensajesHistoriaAatrox.impresionPantalla1();
-			ImpresionesTitulo.Titulo1();
+			ImpresionesTitulo.titulo1();
 			ImpresionMapas.imprimirmapaGeneral();
 			ImpresionMensajes.saltarPantalla();
 			do {
 				saltoPantalla = Leer.datoInt();
 			} while (saltoPantalla != 1);
 			MensajesHistoriaAatrox.impresion1Pantalla2();
-			ImpresionesTitulo.TituloAatrox();
+			ImpresionesTitulo.tituloAatrox();
 			ImpresionesPersonajes.imprimirAatrox();
 			MensajesHistoriaAatrox.impresion2Pantalla2();
 			ImpresionMensajes.saltarPantalla();
@@ -114,7 +114,7 @@ public class Ppal {
 				saltoPantalla = Leer.datoInt();
 			} while (saltoPantalla != 1);
 			MensajesHistoriaAatrox.impresion1Pantalla3();
-			ImpresionesTitulo.Titulo3();
+			ImpresionesTitulo.titulo3();
 			ImpresionMapas.imprimirShurima();
 			ImpresionesEscenarios.ImprimirPiramide();
 			MensajesHistoriaAatrox.impresion2Pantalla3();
@@ -123,7 +123,7 @@ public class Ppal {
 				saltoPantalla = Leer.datoInt();
 			} while (saltoPantalla != 1);
 			MensajesHistoriaAatrox.impresion1Pantalla4();
-			ImpresionesTitulo.TituloOrnn();
+			ImpresionesTitulo.tituloOrnn();
 			ImpresionesEnemigos.imprimirOrnn();
 			MensajesHistoriaAatrox.impresion2Pantalla4();
 			opciones = Leer.datoInt();
@@ -162,7 +162,7 @@ public class Ppal {
 					saltoPantalla = Leer.datoInt();
 				} while (saltoPantalla != 1);
 				MensajesHistoriaAatrox.impresion1Pantalla5();
-				ImpresionesTitulo.TituloShyvana();
+				ImpresionesTitulo.tituloShyvana();
 				ImpresionesEnemigos.imprimirShyvana();
 				MensajesHistoriaAatrox.impresion2Pantalla5();
 				ImpresionesEscenarios.ImprimirBosque();
@@ -216,7 +216,7 @@ public class Ppal {
 					saltoPantalla = Leer.datoInt();
 				} while (saltoPantalla != 1);
 				MensajesHistoriaAatrox.impresion1Pantalla6();
-				ImpresionesTitulo.TituloShyvana();
+				ImpresionesTitulo.tituloShyvana();
 				ImpresionesEnemigos.imprimirShyvana();
 				MensajesHistoriaAatrox.impresion2Pantalla6();
 				opciones = Leer.datoInt();
@@ -267,7 +267,7 @@ public class Ppal {
 						saltoPantalla = Leer.datoInt();
 					} while (saltoPantalla != 1);
 					MensajesHistoriaAatrox.impresion1Pantalla8();
-					ImpresionesTitulo.Titulo2();
+					ImpresionesTitulo.titulo2();
 					ImpresionMapas.imprimirmapaValoran();
 					ImpresionesEscenarios.ImprimirBarco();
 					ImpresionMensajes.saltarPantalla();
@@ -329,7 +329,7 @@ public class Ppal {
 						saltoPantalla = Leer.datoInt();
 					} while (saltoPantalla != 1);
 					MensajesHistoriaAatrox.impresion1Pantalla11();
-					ImpresionesTitulo.Titulo1Malzahar();
+					ImpresionesTitulo.titulo1Malzahar();
 					ImpresionesEnemigos.imprimirMalzahar();
 					MensajesHistoriaAatrox.impresion2Pantalla11();
 					opciones = Leer.datoInt();
@@ -443,7 +443,7 @@ public class Ppal {
 								saltoPantalla = Leer.datoInt();
 							} while (saltoPantalla != 1);
 							MensajesHistoriaAatrox.impresion1Pantalla16();
-							ImpresionesTitulo.Titulo4();
+							ImpresionesTitulo.titulo4();
 							ImpresionMapas.imprimirIonia();
 							MensajesHistoriaAatrox.impresion2Pantalla16();
 							ImpresionMensajes.saltarPantalla();
@@ -498,7 +498,7 @@ public class Ppal {
 								saltoPantalla = Leer.datoInt();
 							} while (saltoPantalla != 1);
 							MensajesHistoriaAatrox.impresion1Pantalla18();
-							ImpresionesTitulo.TituloLeeroy();
+							ImpresionesTitulo.tituloLeeroy();
 							ImpresionesEnemigos.imprimirLeeroyJenkins();
 							MensajesHistoriaAatrox.impresion2Pantalla18();
 							opciones = Leer.datoInt();
@@ -524,8 +524,8 @@ public class Ppal {
 								ControllerCombateAatrox.combateAatroxBoss(aatrox, boss, opciones);
 
 							} while (aatrox.getVida() > 0.0 && boss.getVida() > 0.0);
-							ImpresionesTitulo.TituloFinal();
-							ImpresionesTitulo.Creditos();
+							ImpresionesTitulo.tituloFinal();
+							ImpresionesTitulo.creditos();
 						} else {
 							ImpresionesTitulo.teHanMatado();
 						}
@@ -557,7 +557,7 @@ public class Ppal {
 			MensajeHistoriaAzir.historiaAzir2v3();
 			opciones = Leer.datoInt();
 
-			ImpresionesTitulo.TituloOrnn();
+			ImpresionesTitulo.tituloOrnn();
 			ImpresionesEnemigos.imprimirOrnn();
 			MensajeHistoriaAzir.historiaAzir3();
 			MensajeHistoriaAzir.comenzarPelea();
@@ -594,7 +594,7 @@ public class Ppal {
 				ImpresionLoot1.imprimirCofre();
 				opciones = Leer.datoInt();
 
-				lph = ControllerLoot.LootHabilidad(); //Asigno un loot de habilidad aleatorio
+				lph = ControllerLoot.lootHabilidad(); //Asigno un loot de habilidad aleatorio
 				ImpresionMensajes.ImprimirLootHabilidad(lph, dl);
 				azir.setRecursosMax(azir.getRecursosMax()+lph.getRecursos());
 				azir.setRecursos(azir.getRecursosMax());
@@ -605,7 +605,7 @@ public class Ppal {
 				
 				//Sigue la historia para derrotar al segundo jefe
 				MensajeHistoriaAzir.historiaAzir4();
-				ImpresionesTitulo.Titulo1();
+				ImpresionesTitulo.titulo1();
 				ImpresionMapas.imprimirmapaGeneral();
 				ImpresionMensajes.saltarPantalla();
 				opciones = Leer.datoInt();
@@ -664,7 +664,7 @@ public class Ppal {
 				MensajeHistoriaAzir.historiaAzir5();
 				ImpresionesEscenarios.ImprimirBarco();
 				MensajeHistoriaAzir.historiaAzir6();
-				ImpresionesTitulo.TituloShyvana();
+				ImpresionesTitulo.tituloShyvana();
 				ImpresionesEnemigos.imprimirShyvana();
 				ImpresionMensajes.saltarPantalla();
 				opciones = Leer.datoInt();
@@ -731,7 +731,7 @@ public class Ppal {
 						opciones = Leer.datoInt();
 						
 						MensajeHistoriaAzir.historiaAzir11();
-						ImpresionesTitulo.Titulo1Malzahar();
+						ImpresionesTitulo.titulo1Malzahar();
 						ImpresionesEnemigos.imprimirMalzahar();
 						MensajeHistoriaAzir.comenzarPelea();
 						opciones = Leer.datoInt();
@@ -818,9 +818,9 @@ public class Ppal {
 								ImpresionLoot1.imprimirCofre();
 								opciones = Leer.datoInt();
 								
-								lph2 = ControllerLoot.LootHabilidad(); //Asigno un loot de habilidad aleatorio
+								lph2 = ControllerLoot.lootHabilidad(); //Asigno un loot de habilidad aleatorio
 								while (lph2.getNombre().equals(lph.getNombre())) { //Bucle para que no se repita el mismo looteo que te dio antes
-									lph2 = ControllerLoot.LootHabilidad();
+									lph2 = ControllerLoot.lootHabilidad();
 								}
 								ImpresionMensajes.ImprimirLootHabilidad(lph2, dl);
 								azir.setRecursosMax(azir.getRecursosMax()+lph2.getRecursos());
@@ -832,7 +832,7 @@ public class Ppal {
 								
 								//Sigue la historia para derrotar al quinto y último jefe
 								MensajeHistoriaAzir.historiaAzir13();
-								ImpresionesTitulo.Titulo4();
+								ImpresionesTitulo.titulo4();
 								ImpresionMapas.imprimirIonia();
 								ImpresionMensajes.saltarPantalla();
 								opciones = Leer.datoInt();
@@ -845,7 +845,7 @@ public class Ppal {
 								opciones = Leer.datoInt();
 								
 								MensajeHistoriaAzir.historiaAzir16();
-								ImpresionesTitulo.TituloLeeroy();
+								ImpresionesTitulo.tituloLeeroy();
 								ImpresionesEnemigos.imprimirLeeroyJenkins();
 								MensajeHistoriaAzir.historiaAzir17();
 								opciones = Leer.datoInt();
@@ -878,12 +878,12 @@ public class Ppal {
 								} while (azir.getVida() > 0.0 && boss.getVida() > 0.0);
 								if (azir.getVida() > 0.0 && boss.getVida() <= 0.0) {
 									MensajeHistoriaAzir.historiaAzir18();
-									ImpresionesTitulo.TituloFinal();
+									ImpresionesTitulo.tituloFinal();
 									MensajeHistoriaAzir.historiaAzir19();
 									opciones = Leer.datoInt();
 									
 									if (opciones == 1) {
-										ImpresionesTitulo.Creditos();
+										ImpresionesTitulo.creditos();
 									}
 									else {
 										

@@ -9,7 +9,7 @@ import model.loot.LootPoderHabilidad;
 
 public class ControllerLoot {
 
-	public static LootPoderHabilidad LootHabilidad() {
+	public static LootPoderHabilidad lootHabilidad() {
 		Random r1 = new Random(System.nanoTime());
 		DatosLoot lootHabilidad = new DatosLoot();
 		int minComun = 0, maxComun = 10, minEpica = 11, maxEpica = 15, minLeg = 16, maxLeg = 17, posArray = 0;

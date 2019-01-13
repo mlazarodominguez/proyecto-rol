@@ -2,7 +2,7 @@ package vista;
 
 public class ImpresionesTitulo {
 
-	public static void Titulo1() {
+	public static void titulo1() {
 
 		String titulo1 = "\r\n"
 				+ "                                   ██▀███   █    ██  ███▄    █  ▄▄▄     ▄▄▄█████▓▓█████  ██▀███   ██▀███   ▄▄▄      \r\n"
@@ -19,7 +19,7 @@ public class ImpresionesTitulo {
 		System.out.println(titulo1);
 	}
 
-	public static void Titulo2() {
+	public static void titulo2() {
 
 		String titulo2 = "\r\n"
 				+ "                                   ██▒   █▓ ▄▄▄       ██▓     ▒█████   ██▀███   ▄▄▄       ███▄    █ \r\n"
@@ -36,7 +36,7 @@ public class ImpresionesTitulo {
 		System.out.println(titulo2);
 	}
 
-	public static void Titulo3() {
+	public static void titulo3() {
 
 		String titulo3 = "\r\n"
 				+ "                                           ██████  ██░ ██  █    ██  ██▀███   ██▓ ███▄ ▄███▓ ▄▄▄      \r\n"
@@ -54,7 +54,7 @@ public class ImpresionesTitulo {
 
 	}
 
-	public static void Titulo4() {
+	public static void titulo4() {
 
 		String titulo4 = "\r\n"
 				+ "                                                    ██▓ ▒█████   ███▄    █  ██▓ ▄▄▄      \r\n"
@@ -74,7 +74,7 @@ public class ImpresionesTitulo {
 
 	// Nombre de personajes//
 
-	public static void TituloAzir() {
+	public static void tituloAzir() {
 
 		String tituloazir = "\r\n" + "   ▄████████  ▄███████▄   ▄█     ▄████████ \r\n"
 				+ "  ███    ███ ██▀     ▄██ ███    ███    ███ \r\n" + "  ███    ███       ▄███▀ ███▌   ███    ███ \r\n"
@@ -86,7 +86,7 @@ public class ImpresionesTitulo {
 
 	}
 
-	public static void TituloAatrox() {
+	public static void tituloAatrox() {
 
 		String tituloaatrox = "\r\n"
 				+ "   ▄████████    ▄████████     ███        ▄████████  ▄██████▄  ▀████    ▐████▀ \r\n"
@@ -103,7 +103,7 @@ public class ImpresionesTitulo {
 
 	}
 
-	public static void TituloNeeko() {
+	public static void tituloNeeko() {
 
 		String tituloneeko = "\r\n" + "███▄▄▄▄      ▄████████    ▄████████    ▄█   ▄█▄  ▄██████▄  \r\n"
 				+ "███▀▀▀██▄   ███    ███   ███    ███   ███ ▄███▀ ███    ███ \r\n"
@@ -118,7 +118,7 @@ public class ImpresionesTitulo {
 
 	}
 
-	public static void TituloKled() {
+	public static void tituloKled() {
 
 		String titulokled = "\r\n" + "   ▄█   ▄█▄  ▄█          ▄████████ ████████▄  \r\n"
 				+ "  ███ ▄███▀ ███         ███    ███ ███   ▀███ \r\n"
@@ -135,7 +135,7 @@ public class ImpresionesTitulo {
 
 	// Titulos Enemigos//
 
-	public static void TituloShyvana() {
+	public static void tituloShyvana() {
 
 		String tituloshyvana =
 
@@ -154,7 +154,7 @@ public class ImpresionesTitulo {
 
 	}
 
-	public static void TituloOrnn() {
+	public static void tituloOrnn() {
 
 		String tituloornn =
 
@@ -172,7 +172,7 @@ public class ImpresionesTitulo {
 
 	}
 
-	public static void Titulo1Malzahar() {
+	public static void titulo1Malzahar() {
 
 		String titulomalzahar =
 
@@ -190,7 +190,7 @@ public class ImpresionesTitulo {
 		System.out.println(titulomalzahar);
 	}
 
-	public static void TituloLeeroy() {
+	public static void tituloLeeroy() {
 
 		String tituloleeroy =
 
@@ -226,7 +226,7 @@ public class ImpresionesTitulo {
 		System.out.println(tituloMordekaiser);
 	}
 
-	public static void TituloEsbirro() {
+	public static void tituloEsbirro() {
 
 		String tituloesbirro =
 
@@ -246,7 +246,7 @@ public class ImpresionesTitulo {
 
 	// titulos combates
 
-	public static void TituloGanador() {
+	public static void tituloGanador() {
 
 		String tituloganador = "\r\n"
 				+ "   ▄██████▄     ▄████████ ███▄▄▄▄      ▄████████    ▄████████     ███        ▄████████    ▄████████ \r\n"
@@ -263,7 +263,7 @@ public class ImpresionesTitulo {
 		System.out.println(tituloganador);
 	}
 
-	public static void TituloFinal() {
+	public static void tituloFinal() {
 
 		String titulofinal = "\r\n"
 				+ "   ▄████████  ▄█  ███▄▄▄▄      ▄████████  ▄█            ████████▄     ▄████████  ▄█                 ▄█ ███    █▄     ▄████████    ▄██████▄   ▄██████▄  \r\n"
@@ -279,7 +279,7 @@ public class ImpresionesTitulo {
 		System.out.println(titulofinal);
 	}
 
-	public static void TituloAumentonivel() {
+	public static void tituloAumentonivel() {
 
 		String subidalvl = "\r\n"
 				+ " █████╗ ██╗   ██╗███╗   ███╗███████╗███╗   ██╗████████╗ ██████╗     ██████╗ ███████╗    ███╗   ██╗██╗██╗   ██╗███████╗██╗     \r\n"
@@ -310,7 +310,7 @@ public class ImpresionesTitulo {
 		System.out.println(muerte);
 	}
 	
-	public static void GameOver() {
+	public static void gameOver() {
 		
 		String gameover = "\r\n" + 
 				"  ▄████  ▄▄▄       ███▄ ▄███▓▓█████     ▒█████   ██▒   █▓▓█████  ██▀███  \r\n" + 
@@ -327,7 +327,7 @@ public class ImpresionesTitulo {
 		
 		System.out.println(gameover);
 	}
-	public static void Legendario() {
+	public static void legendario() {
 		
 		String legendario = "\r\n" + 
 				"██╗     ███████╗ ██████╗ ███████╗███╗   ██╗██████╗  █████╗ ██████╗ ██╗ ██████╗ \r\n" + 
@@ -346,7 +346,7 @@ public class ImpresionesTitulo {
 
 	// Creditos
 
-	public static void Creditos() {
+	public static void creditos() {
 
 		String creditos = "\r\n"
 				+ " ██████╗ ██████╗  █████╗  ██████╗██╗ █████╗ ███████╗    ██████╗  ██████╗ ██████╗                                                      \r\n"
