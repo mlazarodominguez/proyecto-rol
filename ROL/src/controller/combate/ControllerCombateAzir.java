@@ -9,6 +9,7 @@ import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 import model.personajes.Azir;
 import vista.ImpresionMensajes;
+import vista.MensajesPrueba;
 
 public class ControllerCombateAzir {
 
@@ -30,17 +31,17 @@ public class ControllerCombateAzir {
 				// Proteger, restauras vida y recursos
 				if (ControllerAzir.restaurarVida(azir1)>azir1.getVidaMaxima() ) {
 					azir1.setVida(azir1.getVidaMaxima());
-					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+					MensajesPrueba.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
 				}else {
 					azir1.setVida(ControllerAzir.restaurarVida(azir1));
-					ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+					MensajesPrueba.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
 				}
 				if (ControllerAzir.restaurarRecursos(azir1)>azir1.getRecursosMax()) {
 					azir1.setRecursos(azir1.getRecursosMax());
-					System.out.println("Recursos restaurados");
+					ImpresionMensajes.restaurarRecursos();
 				} else {
 					azir1.setRecursos(ControllerAzir.restaurarRecursos(azir1));
-					System.out.println("Recursos restaurados");
+					ImpresionMensajes.restaurarRecursos();
 				}
 				
 				break;
@@ -119,17 +120,17 @@ public class ControllerCombateAzir {
 					// Proteger
 					if (ControllerAzir.restaurarVida(azir1)>azir1.getVidaMaxima() ) {
 						azir1.setVida(azir1.getVidaMaxima());
-						ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+						MensajesPrueba.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
 					}else {
 						azir1.setVida(ControllerAzir.restaurarVida(azir1));
-						ImpresionMensajes.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
+						MensajesPrueba.mensajeProtegerPersonaje(ControllerAzir.proteger(boss));
 					}
 					if (ControllerAzir.restaurarRecursos(azir1)>azir1.getRecursosMax()) {
 						azir1.setRecursos(azir1.getRecursosMax());
-						System.out.println("Recursos restaurados");
+						ImpresionMensajes.restaurarRecursos();
 					} else {
 						azir1.setRecursos(ControllerAzir.restaurarRecursos(azir1));
-						System.out.println("Recursos restaurados");
+						ImpresionMensajes.restaurarRecursos();
 					}
 					
 					break;
