@@ -1,3 +1,4 @@
+
 package main;
 
 import java.util.Random;
@@ -71,19 +72,6 @@ public class Ppal {
 				ImpresionesTitulo.tituloAzir();
 				ImpresionesPersonajes.imprimirAzir();
 				MensajeHistoriaAzir.descripcionAzir();
-				ImpresionMensajes.confirmarPersonaje();
-				confirmar = Leer.datoInt();
-				break;
-			case 3:// Kled
-				ImpresionesTitulo.tituloKled();
-				ImpresionesPersonajes.imprimirKled();
-				ImpresionMensajes.DescripcionKled();
-				ImpresionMensajes.confirmarPersonaje();
-				confirmar = Leer.datoInt();
-				break;
-			case 4:// Neeko
-				ImpresionesTitulo.tituloNeeko();
-				ImpresionesPersonajes.imprimirNeeko();
 				ImpresionMensajes.confirmarPersonaje();
 				confirmar = Leer.datoInt();
 				break;

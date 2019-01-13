@@ -4,15 +4,12 @@ import model.enemigos.EnemigoAleatorio;
 import model.enemigos.EnemigoPrincipal;
 import model.personajes.Aatrox;
 import model.personajes.Azir;
-import model.personajes.Kled;
-import model.personajes.Neeko;
+
 
 public class Combate {
 
 	private Aatrox aatrox;
 	private Azir azir;
-	private Kled kled;
-	private Neeko neeko;
 	private EnemigoPrincipal boss;
 	private EnemigoAleatorio randomEnemy;
 
@@ -44,30 +41,6 @@ public class Combate {
 		this.randomEnemy = randomEnemy;
 	}
 
-	public Combate(Kled kled, EnemigoPrincipal boss) {
-		super();
-		this.kled = kled;
-		this.boss = boss;
-	}
-
-	public Combate(Kled kled, EnemigoAleatorio randomEnemy) {
-		super();
-		this.kled = kled;
-		this.randomEnemy = randomEnemy;
-	}
-
-	public Combate(Neeko neeko, EnemigoPrincipal boss) {
-		super();
-		this.neeko = neeko;
-		this.boss = boss;
-	}
-
-	public Combate(Neeko neeko, EnemigoAleatorio randomEnemy) {
-		super();
-		this.neeko = neeko;
-		this.randomEnemy = randomEnemy;
-	}
-
 	public Aatrox getAatrox() {
 		return aatrox;
 	}
@@ -82,22 +55,6 @@ public class Combate {
 
 	public void setAzir(Azir azir) {
 		this.azir = azir;
-	}
-
-	public Kled getKled() {
-		return kled;
-	}
-
-	public void setKled(Kled kled) {
-		this.kled = kled;
-	}
-
-	public Neeko getNeeko() {
-		return neeko;
-	}
-
-	public void setNeeko(Neeko neeko) {
-		this.neeko = neeko;
 	}
 
 	public EnemigoPrincipal getBoss() {
@@ -117,7 +74,7 @@ public class Combate {
 	}
 
 	public String toString() {
-		return "Combate [aatrox=" + aatrox + ", azir=" + azir + ", kled=" + kled + ", neeko=" + neeko + ", boss=" + boss
+		return "Combate [aatrox=" + aatrox + ", azir=" + azir + ", boss=" + boss
 				+ ", randomEnemy=" + randomEnemy + "]";
 	}
 

@@ -75,8 +75,6 @@ public class ImpresionMensajes {
 		System.out.println("Elige el personaje con el que deseas pasarte League of Legend");
 		System.out.println("*Pulsa 1 para conocer a Aatrox");
 		System.out.println("*Pulsa 2 para conocer a Azir");
-		System.out.println("*Pulsa 3 para conocer a Kled");
-		System.out.println("*Pulsa 4 para conocer a Neeko");
 	}
 
 	public static void confirmarPersonaje() {
