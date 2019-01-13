@@ -6,11 +6,9 @@ public class ControllerEnemigoPrincipal {
 
 	public static double ataqueBasico(EnemigoPrincipal boss) {
 		double ataque;
-<<<<<<< HEAD
-		ataque = boss.getAtaque(); // * 1.2;
-=======
-		ataque = boss.getAtaque()* 1.2;
->>>>>>> 55df0a8eba95aeb9e2491fe12a9ccf105b991cf0
+
+		ataque = boss.getAtaque() * 1.2;
+
 		return ataque;
 	}
 
