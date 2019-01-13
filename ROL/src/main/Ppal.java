@@ -1,4 +1,17 @@
-
+/*Main Aatrox -> Miguel
+  Main Azir -> Leiva
+  ControllerCombate Aatrox -> Miguel
+  ControllerCombateAzir -> Leiva
+  ControllerLoot -> Leiva y Miguel
+  ControllerPersonajes -> Manuel
+  ControllerEnemigos -> Pepe
+  datos -> Todos
+  modelCombate -> Manuel
+  modelEnemigos -> Pepe
+  modelLoot -> Leiva
+  modelPersonajes -> Miguel
+  vista -> Todas las impresiones Manuel y Pepe
+  sysos de dialogo -> Leiva y Miguel*/
 package main;
 
 import java.util.Random;
